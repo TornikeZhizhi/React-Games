@@ -1,0 +1,8 @@
+.icon_k {
+  /* background-image: url(../public/slot_k.png); */
+  background-image: url("/public/slot_k.png");
+  background-size: 100%;
+  background-position: 0% 0%;
+  width: 50px;
+  height: 44px;
+}
