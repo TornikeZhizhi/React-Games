@@ -1,8 +1,65 @@
-.icon_k {
-  /* background-image: url(../public/slot_k.png); */
+.slot_k {
   background-image: url("/public/slot_k.png");
+}
+.slot_a {
+  background-image: url("/public/slot_a.png");
+}
+.slot_anubisi {
+  background-image: url("/public/slot_anubisi.png");
+}
+.slot_10 {
+  background-image: url("/public/slot_10.png");
+}
+.slot_faraon {
+  background-image: url("/public/slot_faraon.png");
+}
+.slot_tvali {
+  background-image: url("/public/slot_tvali.png");
+}
+.slot_q {
+  background-image: url("/public/slot_q.png");
+}
+.slot_j {
+  background-image: url("/public/slot_j.png");
+}
+.slot_bug {
+  background-image: url("/public/slot_bug.png");
+}
+
+.slot_item {
   background-size: 100%;
   background-position: 0% 0%;
   width: 50px;
   height: 44px;
+  flex: 0 0 44px;
+}
+.slot_container_box {
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+}
+.slot_container {
+  background-color: antiquewhite;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.slot_rowBox {
+  width: 20%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.slot_row {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.spinBox {
+  text-align: center;
+  cursor: pointer;
 }
