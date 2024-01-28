@@ -25,7 +25,10 @@
 .slot_bug {
   background-image: url("/public/slot_bug.png");
 }
-
+.slot_fluid {
+  transform: scale(1.5);
+  margin-top: 10%;
+}
 .slot_item {
   background-size: 100%;
   background-position: 0% 0%;

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Slot.css";
-import SlotData from "./SlotData.json";
+import "./SlotCss/Slot.css";
+import SlotData from "../SlotData.json";
+import SlotItem from "./SlotItem";
 
 function Slot() {
   let elementHeight = 44;
@@ -11,6 +12,8 @@ function Slot() {
     prizeFirstRow: SlotData,
     prizeSecondRow: SlotData,
     prizeThirdRow: SlotData,
+    prizeFourRow: SlotData,
+    prizeFiveRow: SlotData,
   });
 
   const createAnimeRow = (startIndex) => {
@@ -27,11 +30,15 @@ function Slot() {
     const animeRow1 = createAnimeRow(0);
     const animeRow2 = createAnimeRow(5);
     const animeRow3 = createAnimeRow(10);
+    const animeRow4 = createAnimeRow(15);
+    const animeRow5 = createAnimeRow(20);
 
     setprizeRow({
       prizeFirstRow: animeRow1,
       prizeSecondRow: animeRow2,
       prizeThirdRow: animeRow3,
+      prizeFourRow: animeRow4,
+      prizeFiveRow: animeRow5,
     });
     setRowStyle({
       rowStle1: {
@@ -40,11 +47,19 @@ function Slot() {
       },
       rowStle2: {
         transform: `translateY(${elementHeight * 24}px)`,
-        transitionDuration: "1.8s",
+        transitionDuration: "1.5s",
       },
       rowStle3: {
         transform: `translateY(${elementHeight * 24}px)`,
-        transitionDuration: "2.2s",
+        transitionDuration: "1.6s",
+      },
+      rowStle4: {
+        transform: `translateY(${elementHeight * 24}px)`,
+        transitionDuration: "1.7s",
+      },
+      rowStle5: {
+        transform: `translateY(${elementHeight * 24}px)`,
+        transitionDuration: "1.8s",
       },
     });
   };
@@ -73,6 +88,12 @@ function Slot() {
       prizeThirdRow: SlotData.slice(10, 15).map((item) => ({
         name: item.name,
       })),
+      prizeFourRow: SlotData.slice(15, 20).map((item) => ({
+        name: item.name,
+      })),
+      prizeFiveRow: SlotData.slice(20, 25).map((item) => ({
+        name: item.name,
+      })),
     });
   };
 
@@ -83,18 +104,28 @@ function Slot() {
           <div className="slot_rowBox">
             <div className="slot_row" style={rowStyle.rowStle1}>
               {prizeRow.prizeFirstRow.map((item, index) => {
-                return (
-                  <div key={index} className={`slot_item ${item.name}`}></div>
-                );
+                return <SlotItem key={index} slotName={item.name} />;
               })}
             </div>
           </div>
           <div className="slot_rowBox">
             <div className="slot_row" style={rowStyle.rowStle2}>
               {prizeRow.prizeSecondRow.map((item, index) => {
-                return (
-                  <div key={index} className={`slot_item ${item.name}`}></div>
-                );
+                return <SlotItem key={index} slotName={item.name} />;
+              })}
+            </div>
+          </div>
+          <div className="slot_rowBox">
+            <div className="slot_row" style={rowStyle.rowStle3}>
+              {prizeRow.prizeThirdRow.map((item, index) => {
+                return <SlotItem key={index} slotName={item.name} />;
+              })}
+            </div>
+          </div>
+          <div className="slot_rowBox">
+            <div className="slot_row" style={rowStyle.rowStle4}>
+              {prizeRow.prizeFourRow.map((item, index) => {
+                return <SlotItem key={index} slotName={item.name} />;
               })}
             </div>
           </div>
@@ -102,12 +133,10 @@ function Slot() {
             <div
               className="slot_row"
               onTransitionEnd={() => handleTransitionEnd(3)}
-              style={rowStyle.rowStle3}
+              style={rowStyle.rowStle5}
             >
-              {prizeRow.prizeThirdRow.map((item, index) => {
-                return (
-                  <div key={index} className={`slot_item ${item.name}`}></div>
-                );
+              {prizeRow.prizeFiveRow.map((item, index) => {
+                return <SlotItem key={index} slotName={item.name} />;
               })}
             </div>
           </div>
