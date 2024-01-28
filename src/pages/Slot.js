@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Slot.css";
 import SlotData from "./SlotData.json";
 
 function Slot() {
+  let elementHeight = 44;
+
   const [rowStyle, setRowStyle] = useState({});
 
   const [prizeRow, setprizeRow] = useState({
@@ -31,20 +33,36 @@ function Slot() {
       prizeSecondRow: animeRow2,
       prizeThirdRow: animeRow3,
     });
-
     setRowStyle({
-      transform: `translateY(${44 * 24}px)`,
-      transitionDuration: "1.4s",
-      filter: "blur(0.5px)",
-      // "transition-timing-function": "cubic-bezier(0.57, -0.03, 0.57, 1.1)",
+      rowStle1: {
+        transform: `translateY(${elementHeight * 24}px)`,
+        transitionDuration: "1.4s",
+      },
+      rowStle2: {
+        transform: `translateY(${elementHeight * 24}px)`,
+        transitionDuration: "1.8s",
+      },
+      rowStle3: {
+        transform: `translateY(${elementHeight * 24}px)`,
+        transitionDuration: "2.2s",
+      },
     });
   };
 
   const handleTransitionEnd = () => {
     setRowStyle({
-      transform: `translateY(0px)`,
-      transitionDuration: "0s",
-      filter: "blur(0)",
+      rowStle1: {
+        transform: `translateY(0)`,
+        transitionDuration: "0s",
+      },
+      rowStle2: {
+        transform: `translateY(0)`,
+        transitionDuration: "0s",
+      },
+      rowStle3: {
+        transform: `translateY(0)`,
+        transitionDuration: "0s",
+      },
     });
 
     setprizeRow({
@@ -63,11 +81,7 @@ function Slot() {
       <div className="slot_container_box">
         <div className="slot_container">
           <div className="slot_rowBox">
-            <div
-              className="slot_row"
-              onTransitionEnd={handleTransitionEnd}
-              style={rowStyle}
-            >
+            <div className="slot_row" style={rowStyle.rowStle1}>
               {prizeRow.prizeFirstRow.map((item, index) => {
                 return (
                   <div key={index} className={`slot_item ${item.name}`}></div>
@@ -76,11 +90,7 @@ function Slot() {
             </div>
           </div>
           <div className="slot_rowBox">
-            <div
-              className="slot_row"
-              onTransitionEnd={handleTransitionEnd}
-              style={rowStyle}
-            >
+            <div className="slot_row" style={rowStyle.rowStle2}>
               {prizeRow.prizeSecondRow.map((item, index) => {
                 return (
                   <div key={index} className={`slot_item ${item.name}`}></div>
@@ -91,8 +101,8 @@ function Slot() {
           <div className="slot_rowBox">
             <div
               className="slot_row"
-              onTransitionEnd={handleTransitionEnd}
-              style={rowStyle}
+              onTransitionEnd={() => handleTransitionEnd(3)}
+              style={rowStyle.rowStle3}
             >
               {prizeRow.prizeThirdRow.map((item, index) => {
                 return (

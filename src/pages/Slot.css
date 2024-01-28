@@ -63,3 +63,14 @@
   text-align: center;
   cursor: pointer;
 }
+
+.slot_rowBox:nth-child(1) .slot_row {
+  transition-duration: 1.4s;
+}
+
+.slot_rowBox:nth-child(2) .slot_row {
+  transition-duration: 1.6s;
+}
+.slot_rowBox:nth-child(3) .slot_row {
+  transition-duration: 1.8s;
+}
