@@ -4,19 +4,18 @@
   { "name": "slot_anubisi", "animation": false },
   { "name": "slot_a", "animation": false },
   { "name": "slot_10", "animation": false },
+
   { "name": "slot_faraon", "animation": false },
   { "name": "slot_j", "animation": false },
   { "name": "slot_q", "animation": false },
   { "name": "slot_tvali", "animation": false },
   { "name": "slot_bug", "animation": false },
+
   { "name": "slot_tvali", "animation": false },
   { "name": "slot_j", "animation": false },
   { "name": "slot_a", "animation": false },
   { "name": "slot_anubisi", "animation": false },
   { "name": "slot_a", "animation": false },
-  { "name": "slot_10", "animation": false },
-  { "name": "slot_faraon", "animation": false },
-  { "name": "slot_j", "animation": false },
-  { "name": "slot_q", "animation": false },
-  { "name": "slot_tvali", "animation": false }
+
+  { "name": "slot_a", "animation": false }
 ]
