@@ -4,17 +4,51 @@ import SlotData from "../SlotData.json";
 import SlotItem from "./SlotItem";
 
 function Slot() {
-  let elementHeight = 44;
+  let elementHeight = 62;
 
   const [rowStyle, setRowStyle] = useState({});
+  const [prizeRow, setprizeRow] = useState([]);
+  const [buttonDisable, setbuttonDisable] = useState(false);
 
-  const [prizeRow, setprizeRow] = useState({
-    prizeFirstRow: SlotData,
-    prizeSecondRow: SlotData,
-    prizeThirdRow: SlotData,
-    prizeFourRow: SlotData,
-    prizeFiveRow: SlotData,
-  });
+  useEffect(() => {
+    setprizeRow({
+      prizeFirstRow: [
+        { name: "slot_k" },
+        { name: "slot_a" },
+        { name: "slot_anubisi" },
+        { name: "slot_a" },
+        { name: "slot_10" },
+      ],
+      prizeSecondRow: [
+        { name: "slot_j" },
+        { name: "slot_j" },
+        { name: "slot_a" },
+        { name: "slot_tvali" },
+        { name: "slot_bug" },
+      ],
+      prizeThirdRow: [
+        { name: "slot_faraon" },
+        { name: "slot_j" },
+        { name: "slot_a" },
+        { name: "slot_tvali" },
+        { name: "slot_bug" },
+      ],
+      prizeFourRow: [
+        { name: "slot_faraon" },
+        { name: "slot_tvali" },
+        { name: "slot_a" },
+        { name: "slot_tvali" },
+        { name: "slot_bug" },
+      ],
+      prizeFiveRow: [
+        { name: "slot_faraon" },
+        { name: "slot_tvali" },
+        { name: "slot_j" },
+        { name: "slot_tvali" },
+        { name: "slot_j" },
+      ],
+    });
+  }, []);
 
   const createAnimeRow = (startIndex) => {
     return Array.from({ length: 30 }, (_, i) => {
@@ -27,6 +61,7 @@ function Slot() {
   };
 
   const slotAnimation = () => {
+    setbuttonDisable(true);
     const animeRow1 = createAnimeRow(0);
     const animeRow2 = createAnimeRow(5);
     const animeRow3 = createAnimeRow(10);
@@ -65,6 +100,7 @@ function Slot() {
   };
 
   const handleTransitionEnd = () => {
+    setbuttonDisable(false);
     setRowStyle({
       rowStle1: {
         transform: `translateY(0)`,
@@ -103,28 +139,28 @@ function Slot() {
         <div className="slot_container">
           <div className="slot_rowBox">
             <div className="slot_row" style={rowStyle.rowStle1}>
-              {prizeRow.prizeFirstRow.map((item, index) => {
+              {prizeRow.prizeFirstRow?.map((item, index) => {
                 return <SlotItem key={index} slotName={item.name} />;
               })}
             </div>
           </div>
           <div className="slot_rowBox">
             <div className="slot_row" style={rowStyle.rowStle2}>
-              {prizeRow.prizeSecondRow.map((item, index) => {
+              {prizeRow.prizeSecondRow?.map((item, index) => {
                 return <SlotItem key={index} slotName={item.name} />;
               })}
             </div>
           </div>
           <div className="slot_rowBox">
             <div className="slot_row" style={rowStyle.rowStle3}>
-              {prizeRow.prizeThirdRow.map((item, index) => {
+              {prizeRow.prizeThirdRow?.map((item, index) => {
                 return <SlotItem key={index} slotName={item.name} />;
               })}
             </div>
           </div>
           <div className="slot_rowBox">
             <div className="slot_row" style={rowStyle.rowStle4}>
-              {prizeRow.prizeFourRow.map((item, index) => {
+              {prizeRow.prizeFourRow?.map((item, index) => {
                 return <SlotItem key={index} slotName={item.name} />;
               })}
             </div>
@@ -135,15 +171,16 @@ function Slot() {
               onTransitionEnd={() => handleTransitionEnd(3)}
               style={rowStyle.rowStle5}
             >
-              {prizeRow.prizeFiveRow.map((item, index) => {
+              {prizeRow.prizeFiveRow?.map((item, index) => {
                 return <SlotItem key={index} slotName={item.name} />;
               })}
             </div>
           </div>
         </div>
-        <div className="spinBox" onClick={slotAnimation}>
-          Spin
-        </div>
+        <div
+          className={"spinBox " + (buttonDisable ? "disable" : " ")}
+          onClick={slotAnimation}
+        ></div>
       </div>
     </div>
   );
