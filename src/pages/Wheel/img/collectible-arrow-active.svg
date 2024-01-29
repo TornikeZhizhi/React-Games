@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <filter id="nr5hx5bora" width="30.686" height="39.581" x="14.672" y="10.672" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur result="blur" stdDeviation="3"/>
+            <feFlood flood-color="#fff" flood-opacity=".729"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g>
+        <g style="mix-blend-mode:screen;isolation:isolate" opacity="0.6">
+            <g transform="translate(-638 -75) translate(638 75) translate(0 0)">
+                <circle cx="30" cy="30" r="30" fill="none"/>
+            </g>
+        </g>
+        <g filter="url(#nr5hx5bora)" transform="translate(-638 -75) matrix(1, 0, 0, 1, 638, 75)">
+            <path fill="none" stroke="#5a9e9d" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="4px" d="M0 15.924l7.857-7.962L0 0" transform="translate(26.5 22.5)"/>
+        </g>
+    </g>
+</svg>

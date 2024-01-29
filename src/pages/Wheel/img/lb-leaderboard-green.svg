@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="leaderboard" width="50" height="50" viewBox="0 0 50 50">
+    <defs>
+        <style>
+            .cls-2{fill:#14A234}
+        </style>
+    </defs>
+    <g id="leaderboard-2">
+        <g id="Rectangle_4838" fill="none" stroke="rgba(20,162,52,0.5)">
+            <rect width="50" height="50" stroke="none" rx="4"/>
+            <rect width="49" height="49" x=".5" y=".5" rx="3.5"/>
+        </g>
+        <g id="Group_11144" transform="translate(-2379.217 -1558.158)">
+            <path id="Rectangle_5038" d="M0 0H10.108V12.612H0z" class="cls-2" transform="translate(2388 1585.522)"/>
+            <path id="Rectangle_5039" d="M0 0H10.108V14.297H0z" class="cls-2" transform="translate(2411.585 1583.838)"/>
+            <path id="Path_4850" d="M2414.847 1582.619a.843.843 0 0 0-.842-.842h-15.162a.842.842 0 0 0 0 1.685h2.527v16.824h10.108v-16.824H2414a.843.843 0 0 0 .847-.843z" class="cls-2" transform="translate(-1.577 -2.151)"/>
+            <path id="Path_4851" d="M2404.542 1573.109a.593.593 0 0 1 .171.525l-.322 1.876a.593.593 0 0 0 .86.625l1.684-.886a.593.593 0 0 1 .552 0l1.684.886a.593.593 0 0 0 .86-.625l-.322-1.876a.594.594 0 0 1 .171-.525l1.363-1.328a.593.593 0 0 0-.329-1.011l-1.884-.274a.6.6 0 0 1-.446-.324l-.843-1.707a.593.593 0 0 0-1.063 0l-.843 1.707a.6.6 0 0 1-.446.324l-1.883.274a.593.593 0 0 0-.329 1.011z" class="cls-2" transform="translate(-2.365)"/>
+        </g>
+    </g>
+</svg>

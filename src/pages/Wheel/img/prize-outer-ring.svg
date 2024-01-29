@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="631.499" height="631.499" viewBox="0 0 631.499 631.499">
+    <defs>
+        <linearGradient id="1xkuzv008a" x1=".836" x2=".13" y1=".101" y2=".94" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#29abe2"/>
+            <stop offset=".051" stop-color="#408dcf"/>
+            <stop offset=".155" stop-color="#6c56ac"/>
+            <stop offset=".233" stop-color="#883497"/>
+            <stop offset=".275" stop-color="#93278f"/>
+            <stop offset=".407" stop-color="#fceeb3"/>
+            <stop offset=".528" stop-color="#f15a24"/>
+            <stop offset=".619" stop-color="#731a00"/>
+            <stop offset=".679" stop-color="#501314"/>
+            <stop offset=".737" stop-color="#360e23"/>
+            <stop offset=".79" stop-color="#260b2c"/>
+            <stop offset=".831" stop-color="#210a30"/>
+            <stop offset="1" stop-color="#470059"/>
+        </linearGradient>
+    </defs>
+    <g>
+        <path fill="url(#1xkuzv008a)" d="M6299.048 1361c-174.385 0-315.75 141.365-315.75 315.75s141.365 315.75 315.75 315.75 315.749-141.365 315.749-315.75S6473.43 1361 6299.048 1361zm0 612.191c-163.723 0-296.443-132.721-296.443-296.441s132.721-296.441 296.443-296.441 296.44 132.722 296.44 296.441-132.721 296.441-296.44 296.441z" transform="translate(-5983.298 -1361) translate(0 0)"/>
+    </g>
+</svg>

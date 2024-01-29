@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42.977" height="44.283" viewBox="0 0 42.977 44.283">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}.cls-2{fill:#14a234;stroke:#fff;stroke-miterlimit:10}
+        </style>
+    </defs>
+    <g id="spin_wheel_icon" transform="translate(-1.051 -.398)">
+        <path id="Path_5290" d="M19 0A19 19 0 1 1 0 19 19 19 0 0 1 19 0z" class="cls-1" transform="translate(3.54 3.719)"/>
+        <g id="wheel_inactive_icon_mob">
+            <g id="wheel_active_icon" transform="translate(2.54 2.719)">
+                <g id="Group_11945">
+                    <g id="Group_11944">
+                        <g id="Group_11943" transform="rotate(-30 24.446 11.63)">
+                            <g id="Group_11942">
+                                <g id="Group_11940">
+                                    <g id="Group_11929" transform="translate(2.181)">
+                                        <g id="Group_11928">
+                                            <path id="Path_5283" d="M14.319 16.5L0 8.1A15.62 15.62 0 0 1 14.145 0z" class="cls-2"/>
+                                        </g>
+                                    </g>
+                                    <g id="Group_11931" transform="translate(0 8.098)">
+                                        <g id="Group_11930">
+                                            <path id="Path_5284" d="M16.5 8.4L2.355 16.5A16.147 16.147 0 0 1 2.181 0z" class="cls-2"/>
+                                        </g>
+                                    </g>
+                                    <g id="Group_11933" transform="translate(2.355 16.5)">
+                                        <g id="Group_11932">
+                                            <path id="Path_5285" d="M14.145 0l.174 16.5A16.423 16.423 0 0 1 0 8.1z" class="cls-2"/>
+                                        </g>
+                                    </g>
+                                    <g id="Group_11935" transform="translate(16.5 16.5)">
+                                        <g id="Group_11934">
+                                            <path id="Path_5286" d="M0 0l14.319 8.4A15.62 15.62 0 0 1 .174 16.5z" class="cls-2"/>
+                                        </g>
+                                    </g>
+                                    <g id="Group_11937" transform="translate(16.5 8.403)">
+                                        <g id="Group_11936">
+                                            <path id="Path_5287" d="M0 8.1L14.145 0a16.147 16.147 0 0 1 .174 16.5z" class="cls-2"/>
+                                        </g>
+                                    </g>
+                                    <g id="Group_11939" transform="translate(16.326 .001)">
+                                        <g id="Group_11938">
+                                            <path id="Path_5288" d="M.174 16.5L0 0a16.423 16.423 0 0 1 14.319 8.4z" class="cls-2"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <path id="Polygon_24" d="M6.507 1.139a1 1 0 0 1 1.627 0l5.377 7.528a1 1 0 0 1-.814 1.581H1.943a1 1 0 0 1-.814-1.581z" class="cls-1" transform="rotate(180 13.66 5.623)"/>
+                        <circle id="Ellipse_550" cx="5.392" cy="5.392" r="5.392" class="cls-1" transform="translate(14.736 14.429)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

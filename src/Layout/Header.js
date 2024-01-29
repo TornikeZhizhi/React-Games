@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header class="header">
+    <header className="header">
       <nav>
         <ul>
           <li>{/* <Link to="/slot">sda</Link> */}</li>

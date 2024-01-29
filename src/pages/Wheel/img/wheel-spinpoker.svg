@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+    <defs>
+        <filter id="Path_41935" width="22.693" height="22.426" x="9.891" y="10.407" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur result="blur" stdDeviation="1"/>
+            <feFlood flood-opacity=".6"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Path_41936" width="25.471" height="27.937" x="2.415" y=".057" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur result="blur-2" stdDeviation="1"/>
+            <feFlood flood-opacity=".6"/>
+            <feComposite in2="blur-2" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="leaderboard" transform="translate(-1059 -2117)">
+        <path id="Rectangle_5118" fill="none" d="M0 0H35V35H0z" transform="translate(1059 2117)"/>
+        <g id="Group_35438">
+            <g filter="url(#Path_41935)" transform="translate(1007.224 1986.563) translate(51.78 130.44)">
+                <path id="Path_41935-2" d="M88.718 158.818a.39.39 0 0 0-.291.148l-13.018 15.917s-.129.168-.079.273a.178.178 0 0 0 .141.088h7.736s.183 0 .205-.087c0 0 .061-.107-.112-.22a4.361 4.361 0 0 1-2-4.347 1.117 1.117 0 0 1 .561-.8 1.1 1.1 0 0 1 1.018.074c1.9.993 5.206 1.587 7.367-.843 2.493-2.8 2.544-6-1.079-9.969a.618.618 0 0 0-.449-.234z" class="cls-2" transform="translate(-62.43 -145.41)"/>
+            </g>
+            <g filter="url(#Path_41936)" transform="translate(1007.224 1986.563) translate(51.78 130.44)">
+                <path id="Path_41936-2" d="M67.207 153.944a7.957 7.957 0 0 0 1.052-.958h.007l8.14-9.955a.894.894 0 0 0 .257-.561.883.883 0 0 0-.316-.588c-5.161-4.749-6.318-6.674-6.894-7.917 0 0-.181-.473-.443-.473s-.393.475-.393.475c-.57 1.246-1.981 3.424-7.113 8.206-4.962 4.622-5.384 8.457-2.579 11.573 2.591 2.881 6.789 1.454 8.282.198z" class="cls-2" transform="translate(-51.78 -130.44)"/>
+            </g>
+        </g>
+    </g>
+</svg>

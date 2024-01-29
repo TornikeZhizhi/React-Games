@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="102" height="327" viewBox="0 0 102 327">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="Rectangle_6410" d="M0 0H101.5V327H0z" class="cls-1"/>
+        </clipPath>
+        <clipPath id="clip-path-2">
+            <path id="Rectangle_6473" d="M0 0H101.5V327H0z" class="cls-1" transform="translate(0 3)"/>
+        </clipPath>
+        <linearGradient id="linear-gradient" x1=".5" x2=".038" y2=".825" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#1fbca1"/>
+            <stop offset="1" stop-color="#240101"/>
+        </linearGradient>
+        <filter id="Path_36912" width="180.485" height="367.716" x="-15.744" y="-20.127" filterUnits="userSpaceOnUse">
+            <feOffset dy="6"/>
+            <feGaussianBlur result="blur" stdDeviation="5"/>
+            <feFlood flood-opacity=".651"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <style>
+            .cls-1,.cls-6{fill:none}.cls-6{stroke-miterlimit:10}.cls-7{stroke:none}
+        </style>
+    </defs>
+    <g id="green_1" transform="translate(-680 -1840)">
+        <g id="Component_165_12" transform="translate(680 1840)">
+            <g id="Mask_Group_117" clip-path="url(#clip-path)">
+                <g id="Group_36829" transform="rotate(-9 37.823 -3.237)">
+                    <g id="Group_35293" filter="url(#Path_36912)" transform="rotate(9.2 36.991 -3.22)">
+                        <path id="Path_36912-2" fill="#fff" stroke="#1fbca1" stroke-miterlimit="10" stroke-width="3px" d="M0 315V0a299.488 299.488 0 0 1 97.342 15.417z" transform="rotate(-9 37.841 -3.223)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="Mask_Group_130" clip-path="url(#clip-path-2)" transform="translate(680.5 1837)">
+            <g id="Group_36858" transform="rotate(-9 48.125 2.726)">
+                <g id="Group_36857">
+                    <g id="Path_44818" fill="url(#linear-gradient)" stroke-miterlimit="10">
+                        <path d="M2.77 302.835L2.999 3.009c16.591.118 31.932 1.33 46.814 3.694 14.79 2.35 29.67 5.925 45.395 10.91L2.77 302.836z" class="cls-7"/>
+                        <path fill="#d6ecf7" d="M5.785 283.803L91.418 19.572C62.531 10.662 36.422 6.518 5.995 6.046l-.21 277.757m-6.029 38.064L0 0h.3c35.256 0 65.136 4.749 98.688 15.678L-.244 321.867z"/>
+                    </g>
+                    <g id="Path_44819" class="cls-6">
+                        <path d="M-.244 321.867L0 0c35.386-.027 65.341 4.718 98.988 15.678z" class="cls-7"/>
+                        <path fill="#1fbca1" d="M5.785 283.803L91.418 19.572C62.531 10.662 36.422 6.518 5.995 6.046l-.21 277.757m-6.029 38.064L0 0h.3c35.256 0 65.136 4.749 98.688 15.678L-.244 321.867z"/>
+                    </g>
+                    <g id="Path_44820" class="cls-6">
+                        <path d="M-.212 280.288L0 0a263.928 263.928 0 0 1 86.2 13.653z" class="cls-7" transform="translate(5.562 6.25)"/>
+                        <path fill="#1bd6b6" d="M1.797 267.6L83.68 14.94c-13.94-4.448-27.113-7.628-40.207-9.708C30.3 3.14 16.713 2.08 1.998 2.004l-.2 265.596m-2.01 12.688L0 0h.26C30.964 0 56.984 4.136 86.2 13.653L-.212 280.288z" transform="translate(5.562 6.25)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

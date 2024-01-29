@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60.574" height="61.199" viewBox="0 0 60.574 61.199">
+    <defs>
+        <style>
+            .cls-3{fill:none}.cls-2{fill:#fff}.cls-3{stroke:#fff;stroke-miterlimit:10;stroke-width:4px}
+        </style>
+    </defs>
+    <g id="history" transform="translate(.574 .6)">
+        <path id="Rectangle_5393" fill="none" d="M0 0H60V60H0z"/>
+        <g id="wheel_inactive_icon_mob" transform="translate(.346 1.006)">
+            <g id="wheel_inactive_icon">
+                <rect id="Rectangle_5300" width="17.396" height="2.899" class="cls-2" rx="1.45" transform="translate(19.983 55.029)"/>
+                <g id="Group_11945">
+                    <g id="Group_11944">
+                        <g id="Group_11943" transform="rotate(-30 39.606 10.612)">
+                            <g id="Group_11942">
+                                <g id="Group_11940">
+                                    <g id="Group_11929" transform="translate(2.805)">
+                                        <g id="Group_11928">
+                                            <path id="Path_5283" d="M18.42 21.225L0 10.417A20.092 20.092 0 0 1 18.2 0z" class="cls-3"/>
+                                        </g>
+                                    </g>
+                                    <g id="Group_11931" transform="translate(0 10.417)">
+                                        <g id="Group_11930">
+                                            <path id="Path_5284" d="M21.225 10.808L3.029 21.223A20.771 20.771 0 0 1 2.805 0z" class="cls-3"/>
+                                        </g>
+                                    </g>
+                                    <g id="Group_11933" transform="translate(3.029 21.225)">
+                                        <g id="Group_11932">
+                                            <path id="Path_5285" d="M18.2 0l.224 21.223A21.125 21.125 0 0 1 0 10.416z" class="cls-3"/>
+                                        </g>
+                                    </g>
+                                    <g id="Group_11935" transform="translate(21.225 21.225)">
+                                        <g id="Group_11934">
+                                            <path id="Path_5286" d="M0 0l18.42 10.808A20.092 20.092 0 0 1 .224 21.223z" class="cls-3"/>
+                                        </g>
+                                    </g>
+                                    <g id="Group_11937" transform="translate(21.225 10.809)">
+                                        <g id="Group_11936">
+                                            <path id="Path_5287" d="M0 10.416L18.2 0a20.771 20.771 0 0 1 .224 21.223z" class="cls-3"/>
+                                        </g>
+                                    </g>
+                                    <g id="Group_11939" transform="translate(21 .001)">
+                                        <g id="Group_11938">
+                                            <path id="Path_5288" d="M.224 21.223L0 0a21.125 21.125 0 0 1 18.42 10.808z" class="cls-3"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <path id="Polygon_24" d="M9.8 1.139a1 1 0 0 1 1.627 0L20.1 13.276a1 1 0 0 1-.814 1.581H1.943a1 1 0 0 1-.814-1.581z" class="cls-2" transform="rotate(180 20.145 8.877)"/>
+                        <circle id="Ellipse_550" cx="6.367" cy="6.367" r="6.367" class="cls-2" transform="translate(22.812 22.367)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

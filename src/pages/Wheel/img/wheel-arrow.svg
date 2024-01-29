@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="93.327" height="75.719" viewBox="0 0 93.327 75.719">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(0,0,0,0.16);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #e1ebeb;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+
+      .cls-5, .cls-6 {
+        stroke: none;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-7 {
+        filter: url(#Polygon_27);
+      }
+
+      .cls-8 {
+        filter: url(#Polygon_26);
+      }
+    </style>
+    <filter id="Polygon_26" x="0" y="0.001" width="93.327" height="75.718" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#efffd4"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Polygon_27" x="0" y="0" width="93.327" height="75.718" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-color="#efffd4"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="wheel_icon" data-name="wheel icon" transform="translate(9 6)">
+    <path id="Subtraction_40" data-name="Subtraction 40" class="cls-1" d="M75.328,26.726h0A322.136,322.136,0,0,0,0,26.611V0H75.328V26.725Z" transform="translate(0.001 0)"/>
+    <g id="Group_35451" data-name="Group 35451" transform="translate(0 0)">
+      <g class="cls-8" transform="matrix(1, 0, 0, 1, -9, -6)">
+        <path id="Polygon_26-2" data-name="Polygon 26" class="cls-2" d="M37.664,0,75.327,57.718H0Z" transform="translate(84.33 63.72) rotate(180)"/>
+      </g>
+      <path id="Path_41940" data-name="Path 41940" class="cls-3" d="M0,0,37.883,57.634H0Z" transform="translate(37.884 58.044) rotate(180)"/>
+      <g class="cls-7" transform="matrix(1, 0, 0, 1, -9, -6)">
+        <g id="Polygon_27-2" data-name="Polygon 27" class="cls-4" transform="translate(84.33 63.72) rotate(180)">
+          <path class="cls-5" d="M37.664,0,75.327,57.718H0Z"/>
+          <path class="cls-6" d="M 37.6637077331543 3.659763336181641 L 3.693229675292969 55.71844100952148 L 71.63418579101562 55.71844100952148 L 37.6637077331543 3.659763336181641 M 37.6637077331543 -3.814697265625e-06 L 75.32741546630859 57.71844100952148 L 0 57.71844100952148 L 37.6637077331543 -3.814697265625e-06 Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

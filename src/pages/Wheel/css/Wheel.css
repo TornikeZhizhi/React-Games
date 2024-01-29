@@ -1,0 +1,789 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html {
+  background-color: rgb(189, 236, 113);
+}
+
+.bonus-game__wheel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+@keyframes wheelAnime {
+  0% {
+    background-image: url("../img/wheel_border.png");
+  }
+  10% {
+    background-image: url("../img/wheel_border_off.png");
+  }
+  20% {
+    background-image: url("../img/wheel_border.png");
+  }
+  30% {
+    background-image: url("../img/wheel_border_off.png");
+  }
+  40% {
+    background-image: url("../img/wheel_border.png");
+  }
+  50% {
+    background-image: url("../img/wheel_border_off.png");
+  }
+  60% {
+    background-image: url("../img/wheel_border.png");
+  }
+  62% {
+    background-image: url("../img/wheel_border_off.png");
+  }
+  64% {
+    background-image: url("../img/wheel_border.png");
+  }
+  66% {
+    background-image: url("../img/wheel_border_off.png");
+  }
+  68% {
+    background-image: url("../img/wheel_border.png");
+  }
+  70% {
+    background-image: url("../img/wheel_border_off.png");
+  }
+  72% {
+    background-image: url("../img/wheel_border.png");
+  }
+  74% {
+    background-image: url("../img/wheel_border_off.png");
+  }
+  76% {
+    background-image: url("../img/wheel_border.png");
+  }
+  78% {
+    background-image: url("../img/wheel_border_off.png");
+  }
+  100% {
+    background-image: url("../img/wheel_border.png");
+  }
+}
+
+.bonus-game .wheel {
+  width: 436px;
+  height: 435px;
+  padding: 36px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-image: url("../img/wheel_border_off.png");
+  background-position: center center;
+  background-size: cover;
+}
+
+.bonus-game .wheel.anime {
+  animation: wheelAnime 9.2s linear;
+  animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+  animation-fill-mode: forwards;
+  animation-fill-mode: both;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel {
+    width: 93.3333333333vw;
+    height: 93.3333333333vw;
+    padding: 6.9333333333vw;
+    margin-top: 0;
+  }
+}
+
+.bonus-game .wheel__white {
+  background-color: #df9a59;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 0px;
+  z-index: 2;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__white {
+    padding: 0.4vw;
+  }
+}
+
+.bonus-game .wheel__white.spinning {
+  animation-duration: 7s;
+  -webkit-animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+  animation-timing-function: cubic-bezier(0.44, -0.105, 0, 1.07);
+  animation-name: spinning;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.bonus-game .wheel__button {
+  width: 121px;
+  height: 118px;
+  cursor: pointer;
+  background-image: url(../img/button-idle.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  z-index: 4;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__button {
+    width: 26vw;
+    height: 25.36vw;
+  }
+}
+
+.bonus-game .wheel__button:hover {
+  background-image: url(../img/button-hover.png);
+}
+
+.bonus-game .wheel__button.inactive {
+  background-image: url(../img/button-inactive.png);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.bonus-game .wheel__arrow {
+  position: absolute;
+  z-index: 4;
+  width: 77px;
+  height: 59.3px;
+  top: -5px;
+  background-image: url(../img/wheel-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  left: 49%;
+  transform: translateX(-50%);
+  transition: all 0.4s;
+}
+
+.bonus-game .wheel__arrow.up {
+  top: -16px;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__arrow {
+    width: 13.3333333333vw;
+    height: 10.9066666667vw;
+    top: -1.0666666667vw;
+  }
+}
+
+.bonus-game .wheel__mid {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: url("../img/wheel_bg.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.bonus-game .wheel__inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.bonus-game .wheel__shadow {
+  position: absolute;
+  /*visibility: hidden;
+              opacity: 0;*/
+  z-index: 3;
+  width: 100.8%;
+  height: 100.8%;
+  /*background-color: rgba(0, 0, 0, 0.5);*/
+  background-image: url(../img/wheel_shadow.svg);
+  background-position: center;
+  border-radius: 50%;
+  background-size: contain;
+}
+
+.bonus-game .wheel__shadow.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bonus-game .wheel__element {
+  position: absolute;
+  z-index: 2;
+  height: 173px;
+  width: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.bonus-game .wheel__element.active {
+  z-index: 1000;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element {
+    width: 14.6666666667vw;
+    height: 42.6666666667vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(1) {
+  transform: rotate(0deg);
+  right: 153px;
+  top: 4px;
+}
+
+.bonus-game .wheel__element:nth-child(1) .wheel__element-inactive {
+  background-image: url("../img/red_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(1) {
+    right: 32.6666666667vw;
+    top: -1vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(2) {
+  transform: rotate(23deg);
+  right: 118px;
+  top: 6px;
+}
+
+.bonus-game .wheel__element:nth-child(2) .wheel__element-inactive {
+  background-image: url("../img/black_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(2) {
+    right: 25.8666666667vw;
+    top: 0vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(3) {
+  transform: rotate(45deg);
+  right: 87px;
+  top: 27px;
+}
+
+.bonus-game .wheel__element:nth-child(3) .wheel__element-inactive {
+  background-image: url("../img/white_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(3) {
+    right: 19vw;
+    top: 3.6333333333vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(4) {
+  transform: rotate(67deg);
+  right: 63px;
+  top: 55px;
+}
+
+.bonus-game .wheel__element:nth-child(4) .wheel__element-inactive {
+  background-image: url("../img/black_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(4) {
+    right: 14.6666666667vw;
+    top: 9.7333333333vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(5) {
+  transform: rotate(90deg);
+  right: 56px;
+  top: 91px;
+}
+
+.bonus-game .wheel__element:nth-child(5) .wheel__element-inactive {
+  background-image: url("../img/white_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(5) {
+    right: 12.8vw;
+    top: 17.1333333333vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(6) {
+  transform: rotate(113deg);
+  right: 62px;
+  top: 126px;
+}
+
+.bonus-game .wheel__element:nth-child(6) .wheel__element-inactive {
+  background-image: url("../img/red_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(6) {
+    right: 13.7333333333vw;
+    top: 24.4666666667vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(7) {
+  transform: rotate(135deg);
+  right: 80px;
+  top: 160px;
+}
+
+.bonus-game .wheel__element:nth-child(7) .wheel__element-inactive {
+  background-image: url("../img/white_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(7) {
+    right: 17.6vw;
+    top: 31.2vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(8) {
+  transform: rotate(158deg);
+  right: 110px;
+  top: 182px;
+}
+
+.bonus-game .wheel__element:nth-child(8) .wheel__element-inactive {
+  background-image: url("../img/black_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(8) {
+    right: 23.8666666667vw;
+    top: 35.3333333333vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(9) {
+  transform: rotate(180deg);
+  right: 147px;
+  top: 189px;
+}
+
+.bonus-game .wheel__element:nth-child(9) .wheel__element-inactive {
+  background-image: url("../img/white_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(9) {
+    right: 31.4666666667vw;
+    top: 37.3333333333vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(10) {
+  transform: rotate(203deg);
+  right: 183px;
+  top: 182px;
+}
+
+.bonus-game .wheel__element:nth-child(10) .wheel__element-inactive {
+  background-image: url("../img/black_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(10) {
+    transform: rotate(203deg);
+    right: 39.0666666667vw;
+    top: 36.1333333333vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(11) {
+  transform: rotate(225deg);
+  left: 87px;
+  top: 164px;
+}
+
+.bonus-game .wheel__element:nth-child(11) .wheel__element-inactive {
+  background-image: url("../img/red_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(11) {
+    left: 18.9333333333vw;
+    top: 31.6vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(12) {
+  transform: rotate(247deg);
+  left: 64px;
+  top: 134px;
+}
+
+.bonus-game .wheel__element:nth-child(12) .wheel__element-inactive {
+  background-image: url("../img/black_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(12) {
+    left: 14.3333333333vw;
+    top: 25.9333333333vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(13) {
+  transform: rotate(271deg);
+  left: 55px;
+  top: 99px;
+}
+
+.bonus-game .wheel__element:nth-child(13) .wheel__element-inactive {
+  background-image: url("../img/white_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(13) {
+    left: 12.7333333333vw;
+    top: 18.6666666667vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(14) {
+  transform: rotate(294deg);
+  left: 61px;
+  top: 63px;
+}
+
+.bonus-game .wheel__element:nth-child(14) .wheel__element-inactive {
+  background-image: url("../img/black_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(14) {
+    left: 13.8666666667vw;
+    top: 11.1333333333vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(15) {
+  transform: rotate(315deg);
+  left: 80px;
+  top: 30px;
+}
+
+.bonus-game .wheel__element:nth-child(15) .wheel__element-inactive {
+  background-image: url("../img/white_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(15) {
+    left: 17.9333333333vw;
+    top: 4.5333333333vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(16) {
+  transform: rotate(337deg);
+  left: 109px;
+  top: 8px;
+}
+
+.bonus-game .wheel__element:nth-child(16) .wheel__element-inactive {
+  background-image: url("../img/black_winn.svg");
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(16) {
+    left: 24vw;
+    top: 0.3333333333vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(17) {
+  transform: rotate(297deg);
+  left: 92px;
+  top: 62px;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(17) {
+    left: 17.3333333333vw;
+    top: 11.4666666667vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(18) {
+  transform: rotate(315deg);
+  left: 112px;
+  top: 33px;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(18) {
+    left: 21vw;
+    top: 6.3vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(19) {
+  transform: rotate(333deg);
+  left: 140px;
+  top: 13px;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(19) {
+    left: 26vw;
+    top: 2vw;
+  }
+}
+
+.bonus-game .wheel__element:nth-child(20) {
+  transform: rotate(351deg);
+  left: 174px;
+  top: 2px;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element:nth-child(20) {
+    left: 33vw;
+    top: 0.2666666667vw;
+  }
+}
+
+.bonus-game .wheel__element-anker {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.bonus-game .wheel__element-white {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(1.02);
+  -webkit-transition: visibility 0.5s linear, opacity 0.5s linear;
+  -moz-transition: visibility 0.5s linear, opacity 0.5s linear;
+  -ms-transition: visibility 0.5s linear, opacity 0.5s linear;
+  -o-transition: visibility 0.5s linear, opacity 0.5s linear;
+  transition: visibility 0.5s linear, opacity 0.5s linear;
+}
+
+.bonus-game .wheel__element-inactive {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/red_winn.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  z-index: 4;
+  visibility: visible;
+  opacity: 0;
+  transform: scale(1.67);
+  -webkit-transition: visibility 0.5s linear, opacity 0.5s linear;
+  -moz-transition: visibility 0.5s linear, opacity 0.5s linear;
+  -ms-transition: visibility 0.5s linear, opacity 0.5s linear;
+  -o-transition: visibility 0.5s linear, opacity 0.5s linear;
+  transition: visibility 0.5s linear, opacity 0.5s linear;
+  transition-delay: 0.3s;
+  filter: drop-shadow(3 px 3 px 3 px rgba(255, 255, 255, 0.8));
+}
+
+.bonus-game .wheel__element-active {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  z-index: 5;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(1.07);
+  -webkit-transition: visibility 0.3s linear, opacity 0.3s linear;
+  -moz-transition: visibility 0.3s linear, opacity 0.3s linear;
+  -ms-transition: visibility 0.3s linear, opacity 0.3s linear;
+  -o-transition: visibility 0.3s linear, opacity 0.3s linear;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+
+.bonus-game .wheel__element-fire {
+  margin: 0 auto;
+  width: 72%;
+  height: 94%;
+  background-image: url(../img/midori-tonbo-flame.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element-fire {
+    width: 66%;
+    height: 85%;
+  }
+}
+
+.bonus-game .wheel__element-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.bonus-game .wheel__element-text {
+  margin-top: 20px;
+  font-family: AdjaraSemiBold;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
+.bonus-game .wheel__element-text.black {
+  color: #000;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element-text {
+    margin-top: 5.3333333333vw;
+    font-size: 2.6666666667vw;
+  }
+}
+
+.bonus-game .wheel__element-text.tBundle {
+  font-size: 13px;
+  margin-top: 22px;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element-text.tBundle {
+    margin-top: 4.5333333333vw;
+    font-size: 2.1333333333vw;
+  }
+}
+
+.bonus-game .wheel__element-icon {
+  width: 35px;
+  height: 35px;
+  background-image: url(../img/wheel-leaderboard.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element-icon {
+    width: 6.6666666667vw;
+    height: 6.6666666667vw;
+    margin-top: 2vw;
+  }
+}
+
+.bonus-game .wheel__element-icon.points {
+  background-image: url(../img/wheel-leaderboard.svg);
+}
+
+.bonus-game .wheel__element-icon.freespin {
+  background-image: url(../img/wheel-freespin.svg);
+}
+
+.bonus-game .wheel__element-icon.efreebet {
+  background-image: url(../img/wheel-freebet.svg);
+}
+
+.bonus-game .wheel__element-icon.spinpoker {
+  background-image: url(../img/wheel-spinpoker.svg);
+}
+
+.bonus-game .wheel__element-icon.aviabet {
+  background-image: url(../img/wheel-aviabet.svg);
+}
+
+.bonus-game .wheel__element-icon.bundle {
+  background-image: url(../img/wheel-bundle.svg);
+}
+
+.bonus-game .wheel__element-icon.gel {
+  background-image: url("../img/gel.svg");
+}
+
+.bonus-game .wheel__element-icon.p2p {
+  background-image: url(../img/wheel-p2p.svg);
+}
+
+.bonus-game .wheel__element-icon.dice {
+  background-image: url("../img/fregel_black.svg");
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 940px) and (min-width: 320px) {
+  .bonus-game .wheel__element-icon.dice {
+    width: 8.8vw;
+    height: 8.8vw;
+  }
+}
+
+.bonus-game .wheel__element-icon.gel {
+  background-image: url("../img/gel.svg");
+}
+
+.bonus-game .wheel__element.active .wheel__element-white {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bonus-game .wheel__element.active .wheel__element-inactive {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bonus-game .wheel__element.prizeWon .wheel__element-white {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bonus-game .wheel__element.prizeWon .wheel__element-active {
+  opacity: 1;
+  visibility: visible;
+}

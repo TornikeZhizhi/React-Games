@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="245.229"
+   height="244.965"
+   viewBox="0 0 245.229 244.965"
+   version="1.1"
+   id="svg1968"
+   sodipodi:docname="wheel-level-3-lines.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1970"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="2.56"
+     inkscape:cx="94.335938"
+     inkscape:cy="135.35156"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1968" />
+  <defs
+     id="defs1948">
+    <style
+       id="style1946">
+      .cls-1 {
+        fill: none;
+        stroke: rgba(185,207,218,0.15);
+      }
+    </style>
+  </defs>
+  <g
+     id="Component_58_14"
+     data-name="Component 58 14"
+     transform="rotate(0.90775866,62535.686,-46230.369)"
+     style="stroke:#e6e6e6;opacity:0.5">
+    <g
+       id="Group_39537"
+       data-name="Group 39537"
+       style="stroke:#e6e6e6">
+      <g
+         id="Group_39535"
+         data-name="Group 39535"
+         style="stroke:#e6e6e6">
+        <g
+           id="Group_39526"
+           data-name="Group 39526"
+           style="stroke:#e6e6e6">
+          <g
+             id="Group_39525"
+             data-name="Group 39525"
+             style="stroke:#e6e6e6">
+            <path
+               id="Path_58670"
+               data-name="Path 58670"
+               class="cls-1"
+               d="M 864.65,1105.782 862.518,983.7 c 53.939,-0.941 100.015,31.323 117.578,82.331 z"
+               style="stroke:#e6e6e6" />
+          </g>
+        </g>
+        <g
+           id="Group_39528"
+           data-name="Group 39528"
+           style="stroke:#e6e6e6">
+          <g
+             id="Group_39527"
+             data-name="Group 39527"
+             style="stroke:#e6e6e6">
+            <path
+               id="Path_58671"
+               data-name="Path 58671"
+               class="cls-1"
+               d="m 865.274,1105.566 -116.764,-35.7 c 15.771,-51.591 60.69,-85.44 114.633,-86.384 z"
+               style="stroke:#e6e6e6" />
+          </g>
+        </g>
+        <g
+           id="Group_39530"
+           data-name="Group 39530"
+           style="stroke:#e6e6e6">
+          <g
+             id="Group_39529"
+             data-name="Group 39529"
+             style="stroke:#e6e6e6">
+            <path
+               id="Path_58672"
+               data-name="Path 58672"
+               class="cls-1"
+               d="m 865.157,1105.221 -70.034,100.018 c -44.191,-30.943 -62.5,-84.126 -46.731,-135.716 z"
+               style="stroke:#e6e6e6" />
+          </g>
+        </g>
+        <g
+           id="Group_39532"
+           data-name="Group 39532"
+           style="stroke:#e6e6e6">
+          <g
+             id="Group_39531"
+             data-name="Group 39531"
+             style="stroke:#e6e6e6">
+            <path
+               id="Path_58673"
+               data-name="Path 58673"
+               class="cls-1"
+               d="m 865.037,1104.876 73.483,97.514 c -43.085,32.467 -99.322,33.447 -143.516,2.5 z"
+               style="stroke:#e6e6e6" />
+          </g>
+        </g>
+        <g
+           id="Group_39534"
+           data-name="Group 39534"
+           style="stroke:#e6e6e6">
+          <g
+             id="Group_39533"
+             data-name="Group 39533"
+             style="stroke:#e6e6e6">
+            <path
+               id="Path_58674"
+               data-name="Path 58674"
+               class="cls-1"
+               d="m 864.412,1105.091 115.448,-39.752 c 17.563,51.008 1.118,104.8 -41.965,137.266 z"
+               style="stroke:#e6e6e6" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

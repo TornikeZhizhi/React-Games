@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="62" viewBox="0 0 60 62">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_4897" data-name="Rectangle 4897" width="60" height="62" rx="4" transform="translate(109)" fill="rgba(0,159,255,0.3)" opacity="0.9"/>
+    </clipPath>
+  </defs>
+  <g id="Web_my_pozition" data-name="Web my pozition" transform="translate(-533 -3531)">
+    <g id="Mask_Group_19" data-name="Mask Group 19" transform="translate(424 3531)" opacity="0.2" clip-path="url(#clip-path)">
+      <g id="Group_10378" data-name="Group 10378" transform="translate(114.637 -5.43)">
+        <g id="Group_10221" data-name="Group 10221" transform="translate(0)">
+          <g id="chevron-left" transform="translate(0)" opacity="0.3">
+            <path id="chevron-left-2" data-name="chevron-left" d="M9,79.43,37.022,42.715,9,6" transform="translate(-9 -6)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+          </g>
+          <g id="chevron-left-3" data-name="chevron-left" transform="translate(20.061)">
+            <path id="chevron-left-4" data-name="chevron-left" d="M9,79.43,37.022,42.715,9,6" transform="translate(-9 -6)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

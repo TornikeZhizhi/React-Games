@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="620" viewBox="0 0 940 620">
+    <defs>
+        <linearGradient id="vlbdo5eroa" x1=".394" x2=".683" y1="-.11" y2="1.103" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#1fbca1"/>
+            <stop offset="1" stop-color="#003c4d"/>
+        </linearGradient>
+        <clipPath id="d9wlnbhb2b">
+            <path fill="#fff" d="M0 0H940V620H0z"/>
+        </clipPath>
+    </defs>
+    <rect width="940" height="620" fill="url(#vlbdo5eroa)" rx="12"/>
+    <g clip-path="url(#d9wlnbhb2b)" opacity="0.11">
+        <path fill="#fff" d="M672.928 523.7v-87.34l-336.461 43.669 336.461-126.834v-99.017L336.474 480.025l336.454-333.618V0h-2.293L336.48 480.019 573.824 0h-81.858L336.484 480.009 427.89 0h-63.141l-28.264 480L308.222 0h-63.141l91.4 479.99L181.007 0H99.155L336.48 479.981 2.351 0H0v146.334l336.475 333.64L0 254.112v99.02L336.468 479.97 0 436.3v87.339l336.461-43.669L0 606.805v99.016l336.454-225.847L0 813.593V960h2.292l334.157-480.019L99.1 960h81.858l155.487-480.011L245.038 960h63.142l28.263-480 28.264 480h63.141l-91.4-479.991L491.921 960h81.853L336.448 480.019 670.577 960h2.351V813.665l-336.474-333.64 336.474 225.862v-99.02L336.461 480.029z" opacity="0.46" transform="rotate(90 473.232 476.768)"/>
+    </g>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="275.5" height="123" viewBox="0 0 275.5 123">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: rgba(255,220,160,0.9);
+        stroke-width: 4px;
+      }
+
+      .cls-3 {
+        stroke: rgba(255,255,255,0.9);
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+
+      .cls-6 {
+        filter: url(#Rectangle_8969);
+      }
+
+      .cls-7 {
+        filter: url(#Rectangle_8968);
+      }
+
+      .cls-8 {
+        filter: url(#Rectangle_5352);
+      }
+
+      .cls-9 {
+        filter: url(#Polygon_33);
+      }
+    </style>
+    <filter id="Polygon_33" x="0" y="32.01" width="35" height="54" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#fff" flood-opacity="0.749"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_5352" x="0.5" y="0" width="275" height="123" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-2"/>
+      <feFlood flood-color="#fff" flood-opacity="0.902"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_8968" x="3" y="3.5" width="270" height="116" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur-3"/>
+      <feFlood flood-color="#fff" flood-opacity="0.902"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_8969" x="3" y="3.5" width="270" height="116" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur-4"/>
+      <feFlood flood-color="#ebc9bb"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_42484" data-name="Group 42484" transform="translate(-433.5 -668.856)">
+    <g id="Group_41779" data-name="Group 41779" transform="translate(442.5 709.866)">
+      <g class="cls-9" transform="matrix(1, 0, 0, 1, -9, -41.01)">
+        <path id="Polygon_33-2" data-name="Polygon 33" class="cls-1" d="M17.313.648a1,1,0,0,1,1.373,0L34.171,15.273A1,1,0,0,1,33.485,17H2.515a1,1,0,0,1-.687-1.727Z" transform="translate(26 41.01) rotate(90)"/>
+      </g>
+      <path id="Polygon_34" data-name="Polygon 34" class="cls-1" d="M9.479.648a1,1,0,0,1,1.373,0L18.5,7.874A1,1,0,0,1,17.815,9.6H2.515a1,1,0,0,1-.687-1.727Z" transform="translate(13.3 7.835) rotate(90)"/>
+    </g>
+    <g id="Group_42442" data-name="Group 42442">
+      <g class="cls-8" transform="matrix(1, 0, 0, 1, 433.5, 668.86)">
+        <g id="Rectangle_5352-2" data-name="Rectangle 5352" class="cls-2" transform="translate(8 7.5)">
+          <rect class="cls-4" width="260" height="108" rx="2"/>
+          <rect class="cls-5" x="2" y="2" width="256" height="104"/>
+        </g>
+      </g>
+      <g class="cls-7" transform="matrix(1, 0, 0, 1, 433.5, 668.86)">
+        <g id="Rectangle_8968-2" data-name="Rectangle 8968" class="cls-3" transform="translate(9 9.5)">
+          <rect class="cls-4" width="258" height="104" rx="2"/>
+          <rect class="cls-5" x="0.5" y="0.5" width="257" height="103" rx="1.5"/>
+        </g>
+      </g>
+      <g class="cls-6" transform="matrix(1, 0, 0, 1, 433.5, 668.86)">
+        <g id="Rectangle_8969-2" data-name="Rectangle 8969" class="cls-3" transform="translate(9 9.5)">
+          <rect class="cls-4" width="258" height="104" rx="2"/>
+          <rect class="cls-5" x="0.5" y="0.5" width="257" height="103" rx="1.5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

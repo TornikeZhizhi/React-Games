@@ -1,0 +1,18 @@
+ [
+    {"text":"1000₾","id":0, "iconClass":"gel", "textBlack":false,"activeClass":false},
+    {"text":"5₾","id":1, "iconClass":"p2p", "textBlack":false,"activeClass":false},
+    {"text":"10₾","id":2, "iconClass":"dice", "textBlack":true,"activeClass":false},
+    {"text":"100₾","id":3, "iconClass":"p2p", "textBlack":false,"activeClass":false},
+    {"text":"20₾","id":4, "iconClass":"dice", "textBlack":true,"activeClass":false},
+    {"text":"10000₾","id":5, "iconClass":"gel", "textBlack":false,"activeClass":false},
+    {"text":"50₾","id":6, "iconClass":"dice", "textBlack":true,"activeClass":false},
+    {"text":"20₾","id":7, "iconClass":"gel", "textBlack":false,"activeClass":false},
+    {"text":"1₾","id":8, "iconClass":"dice", "textBlack":true,"activeClass":false},
+    {"text":"20₾","id":9, "iconClass":"p2p", "textBlack":false,"activeClass":false},
+    {"text":"250₾","id":10, "iconClass":"gel", "textBlack":false,"activeClass":false},
+    {"text":"300₾","id":11, "iconClass":"p2p", "textBlack":false,"activeClass":false},
+    {"text":"50₾","id":12, "iconClass":"dice", "textBlack":true,"activeClass":false},
+    {"text":"1500₾","id":13, "iconClass":"p2p", "textBlack":false,"activeClass":false},
+    {"text":"1700₾","id":14, "iconClass":"dice", "textBlack":true,"activeClass":false},
+    {"text":"1000₾","id":15, "iconClass":"p2p", "textBlack":false,"activeClass":false}
+]

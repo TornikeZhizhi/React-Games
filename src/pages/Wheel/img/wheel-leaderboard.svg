@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35.667" height="35" viewBox="0 0 35.667 35">
+    <defs>
+        <filter id="Rectangle_5038" width="14.75" height="16.918" x="0" y="16.719" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur result="blur" stdDeviation="1"/>
+            <feFlood flood-opacity=".6"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Path_5238" width="14.75" height="18.376" x="20.417" y="15.26" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur result="blur-2" stdDeviation="1"/>
+            <feFlood flood-opacity=".6"/>
+            <feComposite in2="blur-2" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Path_4850" width="20.584" height="22.022" x="7.292" y="11.614" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur result="blur-3" stdDeviation="1"/>
+            <feFlood flood-opacity=".6"/>
+            <feComposite in2="blur-3" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="leaderboard" transform="translate(-1058.333 -2117)">
+        <path id="Rectangle_5118" fill="none" d="M0 0H35V35H0z" transform="translate(1059 2117)"/>
+        <g id="Group_11275" transform="translate(1061.333 2121.667)">
+            <g filter="url(#Rectangle_5038)" transform="translate(-3 -4.67)">
+                <path id="Rectangle_5038-2" d="M0 0H8.75V10.918H0z" class="cls-2" transform="translate(3 19.72)"/>
+            </g>
+            <g filter="url(#Path_5238)" transform="translate(-3 -4.67)">
+                <path id="Path_5238-2" d="M0 0h8.75v12.376H0z" class="cls-2" transform="translate(23.42 18.26)"/>
+            </g>
+            <g filter="url(#Path_4850)" transform="translate(-3 -4.67)">
+                <path id="Path_4850-2" d="M2412.583 1582.506a.73.73 0 0 0-.729-.729h-13.125a.729.729 0 1 0 0 1.458h2.188v14.565h8.75v-14.564h2.188a.73.73 0 0 0 .728-.73z" class="cls-2" transform="translate(-2387.71 -1567.16)"/>
+            </g>
+            <path id="Path_4851" d="M2404.335 1572.441a.513.513 0 0 1 .147.454l-.278 1.624a.513.513 0 0 0 .745.541l1.458-.767a.514.514 0 0 1 .478 0l1.458.767a.513.513 0 0 0 .745-.541l-.279-1.624a.515.515 0 0 1 .148-.454l1.18-1.15a.513.513 0 0 0-.285-.875l-1.63-.237a.515.515 0 0 1-.386-.281l-.729-1.478a.513.513 0 0 0-.92 0l-.729 1.478a.515.515 0 0 1-.386.281l-1.63.237a.513.513 0 0 0-.285.875z" class="cls-2" transform="translate(-2392.063 -1568.135)"/>
+        </g>
+    </g>
+</svg>
