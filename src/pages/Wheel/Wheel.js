@@ -16,7 +16,7 @@ function Wheel() {
 
     setwheelStyleIndex({
       transform: `rotate(${spinSum}deg)`,
-      transitionDuration: "1.4s",
+      transitionDuration: "3.4s",
       transitionTimingFunction: "cubic-bezier(0.44, -0.105, 0, 1.07)",
     });
   };
@@ -57,7 +57,7 @@ function Wheel() {
       <div className="bonus-game__wrapper">
         <div className="bonus-game__wheel">
           <div className="wheel ">
-            <div className="wheel__button " onClick={wheelAnimation}></div>
+            <div className={"wheel__button "} onClick={wheelAnimation}></div>
             <div className="wheel__arrow"></div>
             <div
               id="spinning"
