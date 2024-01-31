@@ -14,7 +14,6 @@ function WheelPlate({ textBlack, iconClass, activeClass, text }) {
             <div
               className={`wheel__element-text ${textBlack ? "black" : null}`}
             >
-              {" "}
               {text}
             </div>
             <div className={`wheel__element-icon ${iconClass}`}></div>

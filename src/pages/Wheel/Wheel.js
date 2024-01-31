@@ -1,18 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./css/Wheel.css";
 import WheelPlate from "./WheelPlate";
 import Dummy_WheelArray from "./WheelData.json";
 function Wheel() {
   const [wheelArray, setWheelArray] = useState(Dummy_WheelArray);
 
+  const [winningNumber, setwinningNumber] = useState(1);
+  const [wheelStyleIndex, setwheelStyleIndex] = useState({});
+  const [spintValue, setspintValue] = useState(0);
+  console.log("animation end");
+  const wheelAnimation = () => {
+    removeActiveClass();
+    let spinSum = 0;
+    spinSum = spintValue + 1080 - winningNumber * 23;
+
+    setwheelStyleIndex({
+      transform: `rotate(${spinSum}deg)`,
+      transitionDuration: "1.4s",
+      transitionTimingFunction: "cubic-bezier(0.44, -0.105, 0, 1.07)",
+    });
+  };
+
+  const addActiveClass = () => {
+    const updateArray = wheelArray.map((item) => {
+      if (item.id == winningNumber) {
+        // console.log(item.id, winningNumber);
+        return { ...item, activeClass: true };
+      } else {
+        return item;
+      }
+    });
+
+    setWheelArray(updateArray);
+  };
+
+  const removeActiveClass = () => {
+    const updateArray2 = wheelArray.map((item) => {
+      return { ...item, activeClass: false };
+    });
+    setWheelArray(updateArray2);
+  };
+
+  const handleTransitionEnd = () => {
+    addActiveClass();
+    // setspintValue((prev) => prev + 1080);
+
+    // setwinningNumber(winningNumber + 1);
+  };
+
   return (
     <div className="bonus-game">
       <div className="bonus-game__wrapper">
         <div className="bonus-game__wheel">
-          <div className="wheel null">
-            <div className="wheel__button null"></div>
+          <div className="wheel ">
+            <div className="wheel__button " onClick={wheelAnimation}></div>
             <div className="wheel__arrow"></div>
-            <div id="spinning" className="wheel__white null">
+            <div
+              id="spinning"
+              className="wheel__white "
+              style={wheelStyleIndex}
+              onTransitionEnd={() => handleTransitionEnd()}
+            >
               <div className="wheel__mid">
                 <div className="wheel__inner">
                   {wheelArray.map((item) => (
