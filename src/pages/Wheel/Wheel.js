@@ -8,9 +8,9 @@ function Wheel() {
   const [winningNumber, setwinningNumber] = useState(1);
   const [wheelStyleIndex, setwheelStyleIndex] = useState({});
   const [spintValue, setspintValue] = useState(0);
-  console.log("animation end");
+  const [transitionEndHandled, setTransitionEndHandled] = useState(false);
   const wheelAnimation = () => {
-    removeActiveClass();
+    setTransitionEndHandled(false);
     let spinSum = 0;
     spinSum = spintValue + 1080 - winningNumber * 23;
 
@@ -24,13 +24,11 @@ function Wheel() {
   const addActiveClass = () => {
     const updateArray = wheelArray.map((item) => {
       if (item.id == winningNumber) {
-        // console.log(item.id, winningNumber);
         return { ...item, activeClass: true };
       } else {
         return item;
       }
     });
-
     setWheelArray(updateArray);
   };
 
@@ -42,10 +40,16 @@ function Wheel() {
   };
 
   const handleTransitionEnd = () => {
-    addActiveClass();
-    // setspintValue((prev) => prev + 1080);
+    if (!transitionEndHandled) {
+      addActiveClass();
+      setTimeout(() => {
+        removeActiveClass();
+      }, 3000);
 
-    // setwinningNumber(winningNumber + 1);
+      setspintValue((prev) => prev + 1080);
+      setTransitionEndHandled(true);
+    }
+
   };
 
   return (
