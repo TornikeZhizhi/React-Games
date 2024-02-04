@@ -8,9 +8,9 @@ function Wheel() {
   const [winningNumber, setwinningNumber] = useState(1);
   const [wheelStyleIndex, setwheelStyleIndex] = useState({});
   const [spintValue, setspintValue] = useState(0);
-  console.log("animation end");
+
   const wheelAnimation = () => {
-    removeActiveClass();
+    // removeActiveClass();
     let spinSum = 0;
     spinSum = spintValue + 1080 - winningNumber * 23;
 
@@ -42,7 +42,8 @@ function Wheel() {
   };
 
   const handleTransitionEnd = () => {
-    addActiveClass();
+    console.log("animation end");
+    // addActiveClass();
     // setspintValue((prev) => prev + 1080);
 
     // setwinningNumber(winningNumber + 1);

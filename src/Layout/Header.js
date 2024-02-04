@@ -15,7 +15,7 @@ function Header() {
             <a href="/wheel">Wheel</a>
           </li>
           <li>
-            <a href="/shirt-draw">Shirt-Draw</a>
+            <a href="/flip-game">Flio-Game</a>
           </li>
         </ul>
       </nav>

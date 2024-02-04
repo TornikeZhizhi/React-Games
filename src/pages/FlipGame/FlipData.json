@@ -1,0 +1,25 @@
+[
+  { "name": "cancer", "animation": false },
+  { "name": "virgo", "animation": false },
+  { "name": "capricon", "animation": false },
+  { "name": "capricon", "animation": false },
+  { "name": "pisces", "animation": false },
+
+  { "name": "scorpion", "animation": false },
+  { "name": "taurus", "animation": false },
+  { "name": "leo", "animation": false },
+  { "name": "leo", "animation": false },
+  { "name": "virgo", "animation": false },
+
+  { "name": "aquaris", "animation": false },
+  { "name": "aquaris", "animation": false },
+  { "name": "pisces", "animation": false },
+  { "name": "scorpion", "animation": false },
+  { "name": "cancer", "animation": false },
+
+  { "name": "sagittarius", "animation": false },
+  { "name": "sagittarius", "animation": false },
+  { "name": "taurus", "animation": false },
+  { "name": "gemini", "animation": false },
+  { "name": "gemini", "animation": false }
+]
