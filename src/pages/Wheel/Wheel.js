@@ -8,15 +8,16 @@ function Wheel() {
   const [winningNumber, setwinningNumber] = useState(1);
   const [wheelStyleIndex, setwheelStyleIndex] = useState({});
   const [spintValue, setspintValue] = useState(0);
-
+  const [transitionEndHandled, setTransitionEndHandled] = useState(false);
   const wheelAnimation = () => {
+    setTransitionEndHandled(false);
     // removeActiveClass();
     let spinSum = 0;
     spinSum = spintValue + 1080 - winningNumber * 23;
 
     setwheelStyleIndex({
       transform: `rotate(${spinSum}deg)`,
-      transitionDuration: "1.4s",
+      transitionDuration: "3.4s",
       transitionTimingFunction: "cubic-bezier(0.44, -0.105, 0, 1.07)",
     });
   };
@@ -24,13 +25,11 @@ function Wheel() {
   const addActiveClass = () => {
     const updateArray = wheelArray.map((item) => {
       if (item.id == winningNumber) {
-        // console.log(item.id, winningNumber);
         return { ...item, activeClass: true };
       } else {
         return item;
       }
     });
-
     setWheelArray(updateArray);
   };
 
@@ -42,11 +41,15 @@ function Wheel() {
   };
 
   const handleTransitionEnd = () => {
-    console.log("animation end");
-    // addActiveClass();
-    // setspintValue((prev) => prev + 1080);
+    if (!transitionEndHandled) {
+      addActiveClass();
+      setTimeout(() => {
+        removeActiveClass();
+      }, 3000);
 
-    // setwinningNumber(winningNumber + 1);
+      setspintValue((prev) => prev + 1080);
+      setTransitionEndHandled(true);
+    }
   };
 
   return (
@@ -54,7 +57,7 @@ function Wheel() {
       <div className="bonus-game__wrapper">
         <div className="bonus-game__wheel">
           <div className="wheel ">
-            <div className="wheel__button " onClick={wheelAnimation}></div>
+            <div className={"wheel__button "} onClick={wheelAnimation}></div>
             <div className="wheel__arrow"></div>
             <div
               id="spinning"
