@@ -8,6 +8,7 @@ import DummyFlip from "./FlipData.json";
 function FlipGame() {
   const [FlipData, setFlipData] = useState([]);
   const [flipIdArray, setflipIdArray] = useState([]);
+  const [disableTable, setdisableTable] = useState(false);
 
   useEffect(() => {
     let finalFlipData = [];
@@ -76,10 +77,12 @@ function FlipGame() {
       handleCompletion();
     } else if (flipIdArray.length !== 0) {
       // Reset rotation state after a delay
+      setdisableTable(true);
       setTimeout(() => {
         const resetData = FlipData.map((item) => ({ ...item, rotate: false }));
         setFlipData(resetData);
         setflipIdArray([]);
+        setdisableTable(false);
       }, 800);
     }
   };
@@ -89,7 +92,14 @@ function FlipGame() {
       <FlipHeader />
       <div className="flipp_container">
         {FlipData.map((item, index) => {
-          return <FlipBox flipHandler={flipHandler} item={item} key={index} />;
+          return (
+            <FlipBox
+              disableTable={disableTable}
+              flipHandler={flipHandler}
+              item={item}
+              key={index}
+            />
+          );
         })}
       </div>
     </>
