@@ -7,30 +7,43 @@ import DummyFlip from "./FlipData.json";
 
 function FlipGame() {
   const [FlipData, setFlipData] = useState([]);
+  const [flipIdArray, setflipIdArray] = useState([]);
 
   useEffect(() => {
     let finalFlipData = [];
     let startingData = [
-      { name: "cancer", id: 1 },
-      { name: "virgo", id: 2 },
-      { name: "capricon", id: 3 },
-      { name: "scorpion", id: 4 },
-      { name: "taurus", id: 5 },
-      { name: "leo", id: 6 },
-      { name: "aquaris", id: 7 },
-      { name: "pisces", id: 8 },
-      { name: "sagittarius", id: 9 },
-      { name: "gemini", id: 10 },
-      { name: "cancer", id: 1 },
-      { name: "virgo", id: 2 },
-      { name: "capricon", id: 3 },
-      { name: "scorpion", id: 4 },
-      { name: "taurus", id: 5 },
-      { name: "leo", id: 6 },
-      { name: "aquaris", id: 7 },
-      { name: "pisces", id: 8 },
-      { name: "sagittarius", id: 9 },
-      { name: "gemini", id: 10 },
+      { name: "cancer", unicId: 1, id: 1, rotate: false, completed: false },
+      { name: "virgo", unicId: 2, id: 2, rotate: false, completed: false },
+      { name: "capricon", unicId: 3, id: 3, rotate: false, completed: false },
+      { name: "scorpion", unicId: 4, id: 4, rotate: false, completed: false },
+      { name: "taurus", unicId: 5, id: 5, rotate: false, completed: false },
+      { name: "leo", unicId: 6, id: 6, rotate: false, completed: false },
+      { name: "aquaris", unicId: 7, id: 7, rotate: false, completed: false },
+      { name: "pisces", unicId: 8, id: 8, rotate: false, completed: false },
+      {
+        name: "sagittarius",
+        unicId: 9,
+        id: 9,
+        rotate: false,
+        completed: false,
+      },
+      { name: "gemini", unicId: 10, id: 10, rotate: false, completed: false },
+      { name: "cancer", unicId: 11, id: 1, rotate: false, completed: false },
+      { name: "virgo", unicId: 12, id: 2, rotate: false, completed: false },
+      { name: "capricon", unicId: 13, id: 3, rotate: false, completed: false },
+      { name: "scorpion", unicId: 14, id: 4, rotate: false, completed: false },
+      { name: "taurus", unicId: 15, id: 5, rotate: false, completed: false },
+      { name: "leo", unicId: 16, id: 6, rotate: false, completed: false },
+      { name: "aquaris", unicId: 17, id: 7, rotate: false, completed: false },
+      { name: "pisces", unicId: 18, id: 8, rotate: false, completed: false },
+      {
+        name: "sagittarius",
+        unicId: 19,
+        id: 9,
+        rotate: false,
+        completed: false,
+      },
+      { name: "gemini", unicId: 20, id: 10, rotate: false, completed: false },
     ];
     while (startingData.length > 0) {
       let randomNumb = Math.floor(Math.random() * startingData.length);
@@ -40,12 +53,43 @@ function FlipGame() {
     setFlipData(finalFlipData);
   }, []);
 
+  const flipHandler = (unicId, id) => {
+    setflipIdArray([...flipIdArray, id]);
+
+    // console.log(FlipData);
+
+    let rotData = FlipData.map((item) => {
+      return item.unicId == unicId ? { ...item, rotate: true } : item;
+    });
+
+    setFlipData(rotData);
+
+    if (id == flipIdArray[flipIdArray.length - 1]) {
+      setTimeout(function () {
+        let rotData = FlipData.map((item) => {
+          return item.id == id ? { ...item, completed: true } : item;
+        });
+        setFlipData(rotData);
+      }, 1000);
+    } else {
+      if (flipIdArray.length !== 0) {
+        setTimeout(function () {
+          let rotData = FlipData.map((item) => {
+            return { ...item, rotate: false };
+          });
+          setFlipData(rotData);
+          setflipIdArray([]);
+        }, 1200);
+      }
+    }
+  };
+
   return (
     <>
       <FlipHeader />
       <div className="flipp_container">
         {FlipData.map((item, index) => {
-          return <FlipBox item={item} key={index} />;
+          return <FlipBox flipHandler={flipHandler} item={item} key={index} />;
         })}
       </div>
     </>
