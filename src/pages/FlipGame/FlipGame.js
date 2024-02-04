@@ -56,31 +56,31 @@ function FlipGame() {
   const flipHandler = (unicId, id) => {
     setflipIdArray([...flipIdArray, id]);
 
-    // console.log(FlipData);
-
-    let rotData = FlipData.map((item) => {
-      return item.unicId == unicId ? { ...item, rotate: true } : item;
-    });
-
+    // Update rotation state
+    const rotData = FlipData.map((item) =>
+      item.unicId === unicId ? { ...item, rotate: true } : item
+    );
     setFlipData(rotData);
 
-    if (id == flipIdArray[flipIdArray.length - 1]) {
-      setTimeout(function () {
-        let rotData = FlipData.map((item) => {
-          return item.id == id ? { ...item, completed: true } : item;
-        });
-        setFlipData(rotData);
-      }, 1000);
-    } else {
-      if (flipIdArray.length !== 0) {
-        setTimeout(function () {
-          let rotData = FlipData.map((item) => {
-            return { ...item, rotate: false };
-          });
-          setFlipData(rotData);
-          setflipIdArray([]);
-        }, 1200);
-      }
+    const handleCompletion = () => {
+      // Update completion state after a delay
+      setTimeout(() => {
+        const updatedData = FlipData.map((item) =>
+          item.id === id ? { ...item, completed: true } : item
+        );
+        setFlipData(updatedData);
+      }, 1200);
+    };
+
+    if (id === flipIdArray[flipIdArray.length - 1]) {
+      handleCompletion();
+    } else if (flipIdArray.length !== 0) {
+      // Reset rotation state after a delay
+      setTimeout(() => {
+        const resetData = FlipData.map((item) => ({ ...item, rotate: false }));
+        setFlipData(resetData);
+        setflipIdArray([]);
+      }, 800);
     }
   };
 
