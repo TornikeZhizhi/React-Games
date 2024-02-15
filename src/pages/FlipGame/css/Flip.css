@@ -44,7 +44,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 
@@ -109,7 +109,8 @@ body {
   height: 100vh;
   z-index: 1000;
   background-color: #ff5722b0;
-  display: none;
+  display: flex;
+  align-items: center;
 }
 #popup_window.show {
   display: block;
@@ -136,6 +137,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 5%;
 }
 
 .question span {
@@ -321,15 +323,15 @@ body {
 
 @media only screen and (max-width: 1376px) {
   .box {
-    height: 85px;
+    height: 75px;
   }
 
   .flipp_container {
     max-width: 775px;
   }
   .tittle_container h1 {
-    font-size: 44px;
-    margin-bottom: 17px;
+    font-size: 19px;
+    margin-bottom: 2px;
   }
 
   .score_container span {
@@ -404,7 +406,7 @@ body {
 
   background-image: url("../img/quest.png"), linear-gradient(orange, orange);
   -webkit-backface-visibility: hidden;
-  background-size: 40% 65%, 100% 100%;
+  background-size: 50px 50px, 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;
   backface-visibility: hidden;
