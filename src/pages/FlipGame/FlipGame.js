@@ -5,6 +5,9 @@ import FlipBox from "./FlipBox";
 
 import DummyFlip from "./FlipData.json";
 import FlipPopup from "./FlipPopup";
+import matchSound from "./music/wins.mp3";
+import noMatchSound from "./music/fail.mp3";
+import winSound from "./music/congratulations.mp3";
 
 function FlipGame() {
   const [FlipData, setFlipData] = useState([]);
@@ -16,6 +19,9 @@ function FlipGame() {
   const [popupToggler, setpopupToggler] = useState(false);
 
   const interval = useRef(null);
+  const audioWinSoundRef = useRef(new Audio(winSound));
+  const matchAudio = new Audio(matchSound);
+  const noMatchAudio = new Audio(noMatchSound);
 
   useEffect(() => {
     let finalFlipData = [];
@@ -84,12 +90,18 @@ function FlipGame() {
     startTimer();
     seTtime(0);
     setpopupToggler(false);
+    console.log("ss");
+    if (audioWinSoundRef.current) {
+      audioWinSoundRef.current.pause();
+      audioWinSoundRef.current.currentTime = 0;
+    }
   };
 
   const gameFinishedHandler = () => {
-    console.log(gameFinished, FlipData);
     if (gameFinished == FlipData.length / 2 - 1) {
-      console.log("Aba");
+      if (audioWinSoundRef.current) {
+        audioWinSoundRef.current.play();
+      }
       if (bestScore == 0) {
         setbestScore(time);
       } else if (time < bestScore) {
@@ -119,6 +131,7 @@ function FlipGame() {
         const updatedData = FlipData.map((item) =>
           item.id === id ? { ...item, completed: true } : item
         );
+        matchAudio.play();
         setFlipData(updatedData);
       }, 450);
       setflipIdArray([]);
@@ -134,6 +147,7 @@ function FlipGame() {
         setFlipData(resetData);
         setflipIdArray([]);
         setdisableTable(false);
+        noMatchAudio.play();
       }, 350);
     }
   };
