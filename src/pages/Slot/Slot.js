@@ -2,14 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import "./SlotCss/Slot.css";
 import SlotData from "../SlotData.json";
 import SlotItem from "./SlotItem";
-
+import triggerSound from "./music/pr_sound.mp3";
 function Slot() {
   let elementHeight = 62;
 
   const [rowStyle, setRowStyle] = useState({});
   const [prizeRow, setprizeRow] = useState([]);
   const [buttonDisable, setbuttonDisable] = useState(false);
-
+  const audioWinSoundRef = useRef(new Audio(triggerSound));
   useEffect(() => {
     setprizeRow({
       prizeFirstRow: [
@@ -61,6 +61,9 @@ function Slot() {
   };
 
   const slotAnimation = () => {
+    if (audioWinSoundRef.current) {
+      audioWinSoundRef.current.play();
+    }
     setbuttonDisable(true);
     const animeRow1 = createAnimeRow(0);
     const animeRow2 = createAnimeRow(5);
