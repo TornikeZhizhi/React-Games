@@ -145,6 +145,11 @@ html {
   z-index: 4;
 }
 
+.wheel__button.disable {
+  pointer-events: none;
+  filter: grayscale(1);
+}
+
 @media screen and (max-width: 940px) and (min-width: 320px) {
   .bonus-game .wheel__button {
     width: 26vw;

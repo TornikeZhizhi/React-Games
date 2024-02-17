@@ -9,8 +9,10 @@ function Wheel() {
   const [wheelStyleIndex, setwheelStyleIndex] = useState({});
   const [spintValue, setspintValue] = useState(0);
   const [transitionEndHandled, setTransitionEndHandled] = useState(false);
+  const [spinToggler, setspinToggler] = useState(true);
   const wheelAnimation = () => {
     setTransitionEndHandled(false);
+    setspinToggler(false);
     // removeActiveClass();
     let spinSum = 0;
     spinSum = spintValue + 1080 - winningNumber * 23;
@@ -45,6 +47,7 @@ function Wheel() {
       addActiveClass();
       setTimeout(() => {
         removeActiveClass();
+        setspinToggler(true);
       }, 3000);
 
       setspintValue((prev) => prev + 1080);
@@ -57,11 +60,14 @@ function Wheel() {
       <div className="bonus-game__wrapper">
         <div className="bonus-game__wheel">
           <div className="wheel ">
-            <div className={"wheel__button "} onClick={wheelAnimation}></div>
+            <div
+              className={"wheel__button " + (!spinToggler ? "disable" : "")}
+              onClick={wheelAnimation}
+            ></div>
             <div className="wheel__arrow"></div>
             <div
               id="spinning"
-              className="wheel__white "
+              className="wheel__white"
               style={wheelStyleIndex}
               onTransitionEnd={() => handleTransitionEnd()}
             >
