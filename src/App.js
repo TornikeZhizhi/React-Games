@@ -6,18 +6,26 @@ import Home from "./pages/Home/Home";
 import Header from "./Layout/Header";
 import Wheel from "./pages/Wheel/Wheel";
 import FlipGame from "./pages/FlipGame/FlipGame";
+import Quiz from "./pages/Quizz/Quiz";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
-  { path: "/slot", element: <Slot /> },
-  { path: "/wheel", element: <Wheel /> },
-  { path: "/flip-game", element: <FlipGame /> },
+  {
+    path: "/",
+    element: <Header />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/slot", element: <Slot /> },
+      { path: "/wheel", element: <Wheel /> },
+      { path: "/flip-game", element: <FlipGame /> },
+      { path: "/quiz", element: <Quiz /> },
+    ],
+  },
 ]);
 
 function App() {
   return (
     <>
-      <Header></Header>
+      {/* <Header></Header> */}
       <RouterProvider router={router} />;
     </>
   );
