@@ -9,8 +9,6 @@ html {
 body {
   background-color: antiquewhite;
   height: 100%;
-
-  animation: bodyanime 4s linear infinite;
 }
 
 @keyframes bodyanime {
