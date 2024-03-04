@@ -7,6 +7,7 @@ import Header from "./Layout/Header";
 import Wheel from "./pages/Wheel/Wheel";
 import FlipGame from "./pages/FlipGame/FlipGame";
 import Quiz from "./pages/Quizz/Quiz";
+import QuinInner from "./pages/Quizz/QuizInner";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: "/wheel", element: <Wheel /> },
       { path: "/flip-game", element: <FlipGame /> },
       { path: "/quiz", element: <Quiz /> },
+      { path: "/quiz/:id", element: <QuinInner /> },
     ],
   },
 ]);

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./css/quiz.css";
 import Book from "./img/book.jpg";
 import Music from "./img/music.jpg";
@@ -9,93 +10,47 @@ import Art from "./img/art.jpg";
 import Comics from "./img/comics.jpg";
 import Animals from "./img/animals.jpg";
 import Anime from "./img/anime.jpg";
+
+const quizeCategoryData = [
+  { name: "Book", img: Book, categoryId: 10 },
+  { name: "Music", img: Music, categoryId: 12 },
+  { name: "Movie", img: Movie, categoryId: 11 },
+  { name: "Games", img: Games, categoryId: 15 },
+  { name: "Mithology", img: Mithology, categoryId: 20 },
+  { name: "Art", img: Art, categoryId: 25 },
+  { name: "Comics", img: Comics, categoryId: 29 },
+  { name: "Animals", img: Animals, categoryId: 27 },
+  { name: "Anime", img: Anime, categoryId: 31 },
+];
+
 function Quiz() {
+  const navigate = useNavigate();
+  const quizHandler = (catId) => {
+    navigate(`${catId}`);
+  };
+
   return (
     <div className="quiz_fluid">
       <div className="quiz_main_container">
         <h2 className="quiz_title">What Type of Quiz Do You Want do?</h2>
         <div className="quiz_container">
-          <div className="quiz_box">
-            <div className="quiz_text">
-              <h3>Book</h3>
-            </div>
-            <div
-              className="quiz_img"
-              style={{ backgroundImage: `url(${Book})` }}
-            ></div>
-          </div>
-          <div className="quiz_box">
-            <div className="quiz_text">
-              <h3>Music</h3>
-            </div>
-            <div
-              className="quiz_img"
-              style={{ backgroundImage: `url(${Music})` }}
-            ></div>
-          </div>
-          <div className="quiz_box">
-            <div className="quiz_text">
-              <h3>Movie</h3>
-            </div>
-            <div
-              className="quiz_img"
-              style={{ backgroundImage: `url(${Movie})` }}
-            ></div>
-          </div>
-          <div className="quiz_box">
-            <div className="quiz_text">
-              <h3>Video-Games</h3>
-            </div>
-            <div
-              className="quiz_img"
-              style={{ backgroundImage: `url(${Games})` }}
-            ></div>
-          </div>
-          <div className="quiz_box">
-            <div className="quiz_text">
-              <h3>Mythology</h3>
-            </div>
-            <div
-              className="quiz_img"
-              style={{ backgroundImage: `url(${Mithology})` }}
-            ></div>
-          </div>
-          <div className="quiz_box">
-            <div className="quiz_text">
-              <h3>Art</h3>
-            </div>
-            <div
-              className="quiz_img"
-              style={{ backgroundImage: `url(${Art})` }}
-            ></div>
-          </div>
-          <div className="quiz_box">
-            <div className="quiz_text">
-              <h3>Comics</h3>
-            </div>
-            <div
-              className="quiz_img"
-              style={{ backgroundImage: `url(${Comics})` }}
-            ></div>
-          </div>
-          <div className="quiz_box">
-            <div className="quiz_text">
-              <h3>Animals</h3>
-            </div>
-            <div
-              className="quiz_img"
-              style={{ backgroundImage: `url(${Animals})` }}
-            ></div>
-          </div>
-          <div className="quiz_box">
-            <div className="quiz_text">
-              <h3>Anime</h3>
-            </div>
-            <div
-              className="quiz_img"
-              style={{ backgroundImage: `url(${Anime})` }}
-            ></div>
-          </div>
+          {quizeCategoryData.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="quiz_box"
+                onClick={() => quizHandler(item.categoryId)}
+              >
+                <div className="quiz_text">
+                  <h3>{item.name}</h3>
+                </div>
+                <div
+                  className="quiz_img"
+                  style={{ backgroundImage: `url(${item.img})` }}
+                ></div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
