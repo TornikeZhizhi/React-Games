@@ -28,7 +28,7 @@ function QuizInner() {
   }
   const [questions, setquestions] = useState([]);
   const [qIndex, setqIndex] = useState(0);
-
+  const [answersArray, setanswersArray] = useState([]);
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -43,14 +43,17 @@ function QuizInner() {
     if (questions.correct_answer === chooseAnswer) {
       editedData.activeClass[index] = "green";
       setquestions(editedData);
+
+      setanswersArray([...answersArray, true]);
     } else {
       editedData.activeClass[index] = "red";
       setquestions(editedData);
+      setanswersArray([...answersArray, false]);
     }
-
-    setTimeout(function () {
-      setqIndex((prev) => prev + 1);
-    }, 1000);
+    if (qIndex < dummyData.length - 1)
+      setTimeout(function () {
+        setqIndex((prev) => prev + 1);
+      }, 1000);
   };
 
   useEffect(() => {
@@ -71,6 +74,15 @@ function QuizInner() {
       {/* {console.log(questions)} */}
       <div className="quin_inner_container">
         <div className="quiz_question">{questions?.question}</div>
+        <div className="quiz_progressBar">
+          {answersArray.map((item) => {
+            return (
+              <div
+                className={`quiz_progress` + (item ? " green" : " red")}
+              ></div>
+            );
+          })}
+        </div>
         <div className="qs_box_wrapper">
           {questions?.answersArray?.map((item, index) => {
             return (
