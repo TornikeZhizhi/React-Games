@@ -5,27 +5,22 @@ import quizJson from "./QuizData.json";
 
 function QuizInner() {
   const params = useParams();
-  let dummyData;
+  // let dummyData;
 
-  if (params.id == 10) {
-    dummyData = quizJson.book;
-  } else if (params.id == 12) {
-    dummyData = quizJson.music;
-  } else if (params.id == 11) {
-    dummyData = quizJson.movie;
-  } else if (params.id == 15) {
-    dummyData = quizJson.games;
-  } else if (params.id == 20) {
-    dummyData = quizJson.mithology;
-  } else if (params.id == 25) {
-    dummyData = quizJson.art;
-  } else if (params.id == 29) {
-    dummyData = quizJson.comics;
-  } else if (params.id == 27) {
-    dummyData = quizJson.animals;
-  } else if (params.id == 31) {
-    dummyData = quizJson.anime;
-  }
+  const idToDummyDataMap = {
+    10: quizJson.book,
+    12: quizJson.music,
+    11: quizJson.movie,
+    15: quizJson.games,
+    20: quizJson.mithology,
+    25: quizJson.art,
+    29: quizJson.comics,
+    27: quizJson.animals,
+    31: quizJson.anime,
+  };
+
+  const dummyData = idToDummyDataMap[params.id] || []; // default to empty array if no matching id found
+
   const [questions, setquestions] = useState([]);
   const [qIndex, setqIndex] = useState(0);
   const [answersArray, setanswersArray] = useState([]);
@@ -38,68 +33,63 @@ function QuizInner() {
   }
 
   const answerHandler = (chooseAnswer, index) => {
-    // console.log(questions, index);
-    const editedData = { ...questions };
-    if (questions.correct_answer === chooseAnswer) {
-      editedData.activeClass[index] = "green";
-      setquestions(editedData);
+    const correctAnswer = questions.correct_answer;
+    const newActiveClass = questions.activeClass.map((item, idx) =>
+      idx === index ? (chooseAnswer === correctAnswer ? "green" : "red") : item
+    );
+    setquestions((prevQuestions) => ({
+      ...prevQuestions,
+      activeClass: newActiveClass,
+    }));
+    setanswersArray((prevAnswersArray) => [
+      ...prevAnswersArray,
+      chooseAnswer === correctAnswer,
+    ]);
 
-      setanswersArray([...answersArray, true]);
-    } else {
-      editedData.activeClass[index] = "red";
-      setquestions(editedData);
-      setanswersArray([...answersArray, false]);
-    }
-    if (qIndex < dummyData.length - 1)
-      setTimeout(function () {
+    if (qIndex < dummyData.length - 1) {
+      setTimeout(() => {
         setqIndex((prev) => prev + 1);
       }, 1000);
+    }
   };
 
   useEffect(() => {
-    const answersArray = shuffleArray([
-      ...dummyData[qIndex].incorrect_answers,
-      dummyData[qIndex].correct_answer,
-    ]);
-    let sumData = {
-      ...dummyData[qIndex],
-      answersArray,
-      activeClass: [false, false, false, false],
-    };
-    setquestions(sumData);
-  }, [qIndex]);
+    if (!dummyData[qIndex]) return; // Guard clause to prevent unnecessary processing
 
+    const { incorrect_answers, correct_answer } = dummyData[qIndex];
+    const shuffledAnswers = shuffleArray([
+      ...incorrect_answers,
+      correct_answer,
+    ]);
+
+    setquestions({
+      ...dummyData[qIndex],
+      answersArray: shuffledAnswers,
+      activeClass: new Array(incorrect_answers.length + 1).fill(false),
+    });
+  }, [qIndex, dummyData]);
   return (
     <div className="quin_inner_fluid">
-      {/* {console.log(questions)} */}
       <div className="quin_inner_container">
         <div className="quiz_question">{questions?.question}</div>
         <div className="quiz_progressBar">
-          {answersArray.map((item) => {
-            return (
-              <div
-                className={`quiz_progress` + (item ? " green" : " red")}
-              ></div>
-            );
-          })}
+          {answersArray.map((item, index) => (
+            <div
+              key={index}
+              className={`quiz_progress ${item ? "green" : "red"}`}
+            ></div>
+          ))}
         </div>
         <div className="qs_box_wrapper">
-          {questions?.answersArray?.map((item, index) => {
-            return (
-              <div
-                key={index}
-                onClick={() => answerHandler(item, index)}
-                className={
-                  `qs_box ` +
-                  (questions.activeClass[index] !== false
-                    ? questions.activeClass[index]
-                    : " ")
-                }
-              >
-                {item}
-              </div>
-            );
-          })}
+          {questions?.answersArray?.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => answerHandler(item, index)}
+              className={`qs_box ${questions.activeClass[index] || ""}`}
+            >
+              {item}
+            </div>
+          ))}
         </div>
       </div>
     </div>
