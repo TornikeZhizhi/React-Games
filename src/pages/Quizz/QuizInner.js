@@ -37,8 +37,20 @@ function QuizInner() {
     return array;
   }
 
-  const answerHandler = (chooseAnswer) => {
-    console.log(chooseAnswer);
+  const answerHandler = (chooseAnswer, index) => {
+    // console.log(questions, index);
+    const editedData = { ...questions };
+    if (questions.correct_answer === chooseAnswer) {
+      editedData.activeClass[index] = "green";
+      setquestions(editedData);
+    } else {
+      editedData.activeClass[index] = "red";
+      setquestions(editedData);
+    }
+
+    setTimeout(function () {
+      setqIndex((prev) => prev + 1);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -46,13 +58,17 @@ function QuizInner() {
       ...dummyData[qIndex].incorrect_answers,
       dummyData[qIndex].correct_answer,
     ]);
-    let sumData = { ...dummyData[qIndex], answersArray };
-
+    let sumData = {
+      ...dummyData[qIndex],
+      answersArray,
+      activeClass: [false, false, false, false],
+    };
     setquestions(sumData);
   }, [qIndex]);
 
   return (
     <div className="quin_inner_fluid">
+      {/* {console.log(questions)} */}
       <div className="quin_inner_container">
         <div className="quiz_question">{questions?.question}</div>
         <div className="qs_box_wrapper">
@@ -60,8 +76,13 @@ function QuizInner() {
             return (
               <div
                 key={index}
-                onClick={() => answerHandler(item)}
-                className="qs_box"
+                onClick={() => answerHandler(item, index)}
+                className={
+                  `qs_box ` +
+                  (questions.activeClass[index] !== false
+                    ? questions.activeClass[index]
+                    : " ")
+                }
               >
                 {item}
               </div>

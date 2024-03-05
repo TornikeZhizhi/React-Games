@@ -1,6 +1,7 @@
 {
   "book": [
     {
+      "activeClass": [false, false, false, false],
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Books",
