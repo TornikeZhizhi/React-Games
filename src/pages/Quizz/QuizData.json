@@ -57,7 +57,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Books",
-      "question": "Who wrote the novel &#039;Fear And Loathing In Las Vegas&#039;?",
+      "question": "Who wrote the novel Fear And Loathing In Las Vegas?",
       "correct_answer": "Hunter S. Thompson",
       "incorrect_answers": [
         "F. Scott Fitzgerald",
@@ -139,7 +139,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Entertainment: Music",
-      "question": "Who had a 1973 hit with the song &#039;Hocus Pocus&#039;?",
+      "question": "Who had a 1973 hit with the song Hocus Pocus?",
       "correct_answer": "Focus",
       "incorrect_answers": ["Pilot", "Rush", "AC/DC"]
     },
@@ -147,7 +147,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Entertainment: Music",
-      "question": "Who had a 1976 hit with the song &#039;You Make Me Feel Like Dancing&#039;?",
+      "question": "Who had a 1976 hit with the song You Make Me Feel Like Dancing?",
       "correct_answer": "Leo Sayer",
       "incorrect_answers": ["Elton John", "Billy Joel", "Andy Gibb"]
     },
@@ -195,11 +195,7 @@
       "category": "Entertainment: Film",
       "question": "Which one of these films are shot entirely in one-take?",
       "correct_answer": "Russian Ark",
-      "incorrect_answers": [
-        "Good Will Hunting",
-        "Birdman",
-        "Schindler&#039;s List"
-      ]
+      "incorrect_answers": ["Good Will Hunting", "Birdman", "Schindlers List"]
     },
     {
       "type": "multiple",
@@ -257,7 +253,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Film",
-      "question": "The first rule is: you don&#039;t talk about it is a reference to which movie?",
+      "question": "The first rule is: you dont talk about it is a reference to which movie?",
       "correct_answer": "Fight Club",
       "incorrect_answers": ["The Island", "Unthinkable", "American Pie"]
     },
@@ -303,7 +299,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Entertainment: Video Games",
-      "question": "In which U.S. state is Far Cry 5&#039;s fictional setting &#039;Hope County&#039; located?",
+      "question": "In which U.S. state is Far Cry 5s fictional setting Hope County located?",
       "correct_answer": "Montana",
       "incorrect_answers": ["Idaho", "Wyoming", "North Carolina"]
     },
@@ -320,7 +316,7 @@
       "difficulty": "medium",
       "category": "Entertainment: Video Games",
       "question": "In Clash Royale what is Arena 4 called?",
-      "correct_answer": "P.E.K.K.A&#039;s Playhouse",
+      "correct_answer": "P.E.K.K.As Playhouse",
       "incorrect_answers": ["Barbarian Bowl", "Spell Valley", "Royal Arena"]
     },
     {
@@ -593,7 +589,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Entertainment: Comics",
-      "question": "What&#039;s the weakness of american vampires (Scott Snyder&#039;s American Vampire)?",
+      "question": "Whats the weakness of american vampires (Scott Snyders American Vampire)?",
       "correct_answer": "Gold",
       "incorrect_answers": ["Sunlight", "Wood", "Silver"]
     },
@@ -633,7 +629,7 @@
       "type": "multiple",
       "difficulty": "hard",
       "category": "Entertainment: Comics",
-      "question": "In the Archie comics, who was Jughead&#039;s first girlfriend?",
+      "question": "In the Archie comics, who was Jugheads first girlfriend?",
       "correct_answer": "Joani",
       "incorrect_answers": ["Ethel", "Debbi", "Margret"]
     }
@@ -663,7 +659,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Animals",
-      "question": "What is the name of a rabbit&#039;s abode?",
+      "question": "What is the name of a rabbits abode?",
       "correct_answer": "Burrow",
       "incorrect_answers": ["Nest", "Den", "Dray"]
     },
@@ -789,7 +785,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Entertainment: Japanese Anime &amp; Manga",
-      "question": "In JoJo&#039;s Bizarre Adventure, who says Yare yare daze?",
+      "question": "In JoJos Bizarre Adventure, who says Yare yare daze?",
       "correct_answer": "Jotaro Kujo",
       "incorrect_answers": ["Joseph Joestar", "Jolyne Cujoh", "Koichi Hirose"]
     },
@@ -805,7 +801,7 @@
       "type": "multiple",
       "difficulty": "hard",
       "category": "Entertainment: Japanese Anime &amp; Manga",
-      "question": "What year was JoJo&#039;s Bizarre Adventure: Phantom Blood first released?",
+      "question": "What year was JoJos Bizarre Adventure: Phantom Blood first released?",
       "correct_answer": "1987",
       "incorrect_answers": ["2013", "1983", "1995"]
     },
