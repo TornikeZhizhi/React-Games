@@ -24,6 +24,7 @@ function QuizInner() {
   const [questions, setquestions] = useState([]);
   const [qIndex, setqIndex] = useState(0);
   const [answersArray, setanswersArray] = useState([]);
+  const [disableQuiz, setdisableQuiz] = useState(false);
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -33,6 +34,7 @@ function QuizInner() {
   }
 
   const answerHandler = (chooseAnswer, index) => {
+    setdisableQuiz(true);
     const correctAnswer = questions.correct_answer;
     const newActiveClass = questions.activeClass.map((item, idx) =>
       idx === index ? (chooseAnswer === correctAnswer ? "green" : "red") : item
@@ -49,7 +51,7 @@ function QuizInner() {
     if (qIndex < dummyData.length - 1) {
       setTimeout(() => {
         setqIndex((prev) => prev + 1);
-      }, 1000);
+      }, 500);
     }
   };
 
@@ -67,25 +69,34 @@ function QuizInner() {
       answersArray: shuffledAnswers,
       activeClass: new Array(incorrect_answers.length + 1).fill(false),
     });
+    setdisableQuiz(false);
   }, [qIndex, dummyData]);
   return (
     <div className="quin_inner_fluid">
       <div className="quin_inner_container">
         <div className="quiz_question">{questions?.question}</div>
-        <div className="quiz_progressBar">
-          {answersArray.map((item, index) => (
-            <div
-              key={index}
-              className={`quiz_progress ${item ? "green" : "red"}`}
-            ></div>
-          ))}
+        <div className="pr_fluid">
+          <div className="quiz_percens">
+            {qIndex === 0 ? "0%" : `${qIndex}0%`}
+          </div>
+          <div className="quiz_progressBar">
+            {answersArray.map((item, index) => (
+              <div
+                key={index}
+                className={`quiz_progress ${item ? "green" : "red"}`}
+              ></div>
+            ))}
+          </div>
         </div>
         <div className="qs_box_wrapper">
           {questions?.answersArray?.map((item, index) => (
             <div
               key={index}
               onClick={() => answerHandler(item, index)}
-              className={`qs_box ${questions.activeClass[index] || ""}`}
+              className={`qs_box ${
+                questions.activeClass[index] ||
+                "" + (disableQuiz ? "disable" : "")
+              }`}
             >
               {item}
             </div>
