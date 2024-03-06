@@ -107,9 +107,12 @@
   border-radius: 3px;
   cursor: pointer;
 }
-.qs_box:hover {
-  background: #5644b0;
-  color: #fff;
+
+@media only screen and (min-width: 940px) {
+  .qs_box:hover {
+    background: #5644b0;
+    color: #fff;
+  }
 }
 .qs_box.green {
   background: #17b117;
