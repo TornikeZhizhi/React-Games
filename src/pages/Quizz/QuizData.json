@@ -17,7 +17,7 @@
       "type": "multiple",
       "difficulty": "hard",
       "category": "Entertainment: Books",
-      "question": "The novel &quot;Jane Eyre&quot; was written by what author? ",
+      "question": "The novel Jane Eyre was written by what author? ",
       "correct_answer": "Charlotte Bront&euml;",
       "incorrect_answers": [
         "Emily Bront&euml;",
@@ -37,7 +37,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Entertainment: Books",
-      "question": "In the &quot;The Hobbit&quot;, who kills Smaug?",
+      "question": "In the The Hobbit, who kills Smaug?",
       "correct_answer": "Bard",
       "incorrect_answers": ["Bilbo Baggins", "Gandalf the Grey", "Frodo"]
     },
@@ -77,7 +77,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Books",
-      "question": "Who wrote &quot;Harry Potter&quot;?",
+      "question": "Who wrote Harry Potter?",
       "correct_answer": "J.K. Rowling",
       "incorrect_answers": [
         "J.R.R. Tolkien",
@@ -107,7 +107,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Music",
-      "question": "Which rap group released the album &quot;Straight Outta Compton&quot;?",
+      "question": "Which rap group released the album Straight Outta Compton?",
       "correct_answer": "N.W.A",
       "incorrect_answers": ["Wu-Tang Clan", "Run-D.M.C.", "Beastie Boys"]
     },
@@ -115,7 +115,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Entertainment: Music",
-      "question": "Which artist collaborated with American DJ Dillon Francis to release the song 2016 &quot;Need You&quot;?",
+      "question": "Which artist collaborated with American DJ Dillon Francis to release the song 2016 Need You?",
       "correct_answer": "NGHTMRE",
       "incorrect_answers": ["LOUDPVCK", "KRNE", "DVBBS"]
     },
@@ -183,7 +183,7 @@
       "type": "multiple",
       "difficulty": "hard",
       "category": "Entertainment: Music",
-      "question": "Who had a 1981 hit with the song &quot;Japanese Boy&quot;?",
+      "question": "Who had a 1981 hit with the song Japanese Boy?",
       "correct_answer": "Aneka",
       "incorrect_answers": ["Toyah", "Sandra", "Madonna"]
     }
@@ -205,7 +205,7 @@
       "type": "multiple",
       "difficulty": "hard",
       "category": "Entertainment: Film",
-      "question": "In the &quot;Jurassic Park&quot; universe, what was the first dinosaur cloned by InGen in 1986?",
+      "question": "In the Jurassic Park universe, what was the first dinosaur cloned by InGen in 1986?",
       "correct_answer": "Velociraptor",
       "incorrect_answers": ["Triceratops", "Troodon", "Brachiosaurus"]
     },
@@ -221,12 +221,12 @@
       "type": "multiple",
       "difficulty": "hard",
       "category": "Entertainment: Film",
-      "question": "What three movies, in order from release date, make up the &quot;Dollars Trilogy&quot;?",
-      "correct_answer": "&quot;A Fistful of Dollars&quot;, &quot;For a Few Dollars More&quot;, &quot;The Good, the Bad, and the Ugly&quot;",
+      "question": "What three movies, in order from release date, make up the Dollars Trilogy?",
+      "correct_answer": "A Fistful of Dollars, For a Few Dollars More, The Good, the Bad, and the Ugly",
       "incorrect_answers": [
-        "&quot;The Good, the Bad, and the Ugly&quot;, &quot;For A Few Dollars More&quot;, &quot;A Fistful of Dollars&quot;",
-        "&quot;For a Few Dollars More&quot;, &quot;The Good, the Bad, and the Ugly&quot;, &quot;A Fistful of Dollars&quot;",
-        "&quot;For a Few Dollars More&quot;, &quot;A Fistful of Dollars&quot;, &quot;The Good, the Bad, and the Ugly&quot;"
+        "The Good, the Bad, and the Ugly, For A Few Dollars More, A Fistful of Dollars",
+        "For a Few Dollars More, The Good, the Bad, and the Ugly, A Fistful of Dollars",
+        "For a Few Dollars More, A Fistful of Dollars, The Good, the Bad, and the Ugly"
       ]
     },
     {
@@ -241,7 +241,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Entertainment: Film",
-      "question": "In the 1994 movie &quot;Speed&quot;, what is the minimum speed the bus must go to prevent to bomb from exploding?",
+      "question": "In the 1994 movie Speed, what is the minimum speed the bus must go to prevent to bomb from exploding?",
       "correct_answer": "50 mph",
       "incorrect_answers": ["60 mph", "40 mph", "70 mph"]
     },
@@ -257,7 +257,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Film",
-      "question": "&quot;The first rule is: you don&#039;t talk about it&quot; is a reference to which movie?",
+      "question": "The first rule is: you don&#039;t talk about it is a reference to which movie?",
       "correct_answer": "Fight Club",
       "incorrect_answers": ["The Island", "Unthinkable", "American Pie"]
     },
@@ -311,7 +311,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Entertainment: Video Games",
-      "question": "In the &quot;Call Of Duty: Zombies&quot; map &quot;Origins&quot;, how many steps are there to upgrade a Staff?",
+      "question": "In the Call Of Duty: Zombies map Origins, how many steps are there to upgrade a Staff?",
       "correct_answer": "4",
       "incorrect_answers": ["7", "5", "3"]
     },
@@ -319,7 +319,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Entertainment: Video Games",
-      "question": "In &quot;Clash Royale&quot; what is Arena 4 called?",
+      "question": "In Clash Royale what is Arena 4 called?",
       "correct_answer": "P.E.K.K.A&#039;s Playhouse",
       "incorrect_answers": ["Barbarian Bowl", "Spell Valley", "Royal Arena"]
     },
@@ -340,14 +340,14 @@
       "difficulty": "medium",
       "category": "Entertainment: Video Games",
       "question": "What was the name of the protagonist of Metal Gear Solid V: The Phantom Pain?",
-      "correct_answer": "Punished &quot;Venom&quot; Snake",
+      "correct_answer": "Punished Venom Snake",
       "incorrect_answers": ["Miller", "Solid Snake", "Ocelot"]
     },
     {
       "type": "multiple",
       "difficulty": "medium",
       "category": "Entertainment: Video Games",
-      "question": "In &quot;Call of Duty: Zombies&quot;, what group does Doctor Maxis work for?",
+      "question": "In Call of Duty: Zombies, what group does Doctor Maxis work for?",
       "correct_answer": "Group 935",
       "incorrect_answers": [
         "Group Reanimate",
@@ -359,7 +359,7 @@
       "type": "multiple",
       "difficulty": "hard",
       "category": "Entertainment: Video Games",
-      "question": "In &quot;Pok&eacute;mon Sun and Moon&quot;, Team Skull took over which town?",
+      "question": "In Pok&eacute;mon Sun and Moon, Team Skull took over which town?",
       "correct_answer": "Po Town",
       "incorrect_answers": ["Heahea City", "Tapu Village", "Iki Town"]
     },
@@ -503,7 +503,7 @@
       "type": "multiple",
       "difficulty": "hard",
       "category": "Art",
-      "question": "The painting &quot;The Starry Night&quot; by Vincent van Gogh was part of which art movement?",
+      "question": "The painting The Starry Night by Vincent van Gogh was part of which art movement?",
       "correct_answer": "Post-Impressionism",
       "incorrect_answers": ["Romanticism", "Neoclassical", "Impressionism"]
     },
@@ -617,7 +617,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Comics",
-      "question": "What is the alter-ego of the DC comics character &quot;Superman&quot;?",
+      "question": "What is the alter-ego of the DC comics character Superman?",
       "correct_answer": "Clark Kent",
       "incorrect_answers": ["Bruce Wayne", "Arthur Curry", "John Jones"]
     },
@@ -633,7 +633,7 @@
       "type": "multiple",
       "difficulty": "hard",
       "category": "Entertainment: Comics",
-      "question": "In the &quot;Archie&quot; comics, who was Jughead&#039;s first girlfriend?",
+      "question": "In the Archie comics, who was Jughead&#039;s first girlfriend?",
       "correct_answer": "Joani",
       "incorrect_answers": ["Ethel", "Debbi", "Margret"]
     }
@@ -671,7 +671,7 @@
       "type": "multiple",
       "difficulty": "hard",
       "category": "Animals",
-      "question": "Which of the following is another name for the &quot;Poecilotheria Metallica Tarantula&quot;?",
+      "question": "Which of the following is another name for the Poecilotheria Metallica Tarantula?",
       "correct_answer": "Gooty",
       "incorrect_answers": ["Hopper", "Silver Stripe", "Woebegone"]
     },
@@ -679,7 +679,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Animals",
-      "question": "What does &quot;hippopotamus&quot; mean and in what langauge?",
+      "question": "What does hippopotamus mean and in what langauge?",
       "correct_answer": "River Horse (Greek)",
       "incorrect_answers": [
         "River Horse (Latin)",
@@ -707,7 +707,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Animals",
-      "question": "For what reason would a spotted hyena &quot;laugh&quot;?",
+      "question": "For what reason would a spotted hyena laugh?",
       "correct_answer": "Nervousness",
       "incorrect_answers": ["Excitement", "Aggression", "Exhaustion"]
     },
@@ -745,7 +745,7 @@
       "type": "multiple",
       "difficulty": "hard",
       "category": "Entertainment: Japanese Anime &amp; Manga",
-      "question": "In which manga did the &quot;404 Girl&quot; from 4chan originate from?",
+      "question": "In which manga did the 404 Girl from 4chan originate from?",
       "correct_answer": "Yotsuba&amp;!",
       "incorrect_answers": ["Azumanga Daioh", "Lucky Star", "Clover"]
     },
@@ -753,7 +753,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Japanese Anime &amp; Manga",
-      "question": "Who is the armored titan in &quot;Attack On Titan&quot;?",
+      "question": "Who is the armored titan in Attack On Titan?",
       "correct_answer": "Reiner Braun",
       "incorrect_answers": ["Armin Arlelt", "Mikasa Ackermann", "Eren Jaeger"]
     },
@@ -773,7 +773,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Japanese Anime &amp; Manga",
-      "question": "Who was given the title &quot;Full Metal&quot; in the anime series &quot;Full Metal Alchemist&quot;?",
+      "question": "Who was given the title Full Metal in the anime series Full Metal Alchemist?",
       "correct_answer": "Edward Elric",
       "incorrect_answers": ["Alphonse Elric", "Van Hohenheim", "Izumi Curtis"]
     },
@@ -781,7 +781,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Entertainment: Japanese Anime &amp; Manga",
-      "question": "The character Plum from &quot;No Game No Life&quot; is of what race?",
+      "question": "The character Plum from No Game No Life is of what race?",
       "correct_answer": "Dhampir",
       "incorrect_answers": ["Fl&uuml;gel", "Imanity", "Seiren"]
     },
@@ -789,7 +789,7 @@
       "type": "multiple",
       "difficulty": "medium",
       "category": "Entertainment: Japanese Anime &amp; Manga",
-      "question": "In JoJo&#039;s Bizarre Adventure, who says &quot;Yare yare daze&quot;?",
+      "question": "In JoJo&#039;s Bizarre Adventure, who says Yare yare daze?",
       "correct_answer": "Jotaro Kujo",
       "incorrect_answers": ["Joseph Joestar", "Jolyne Cujoh", "Koichi Hirose"]
     },
@@ -805,7 +805,7 @@
       "type": "multiple",
       "difficulty": "hard",
       "category": "Entertainment: Japanese Anime &amp; Manga",
-      "question": "What year was &quot;JoJo&#039;s Bizarre Adventure: Phantom Blood&quot; first released?",
+      "question": "What year was JoJo&#039;s Bizarre Adventure: Phantom Blood first released?",
       "correct_answer": "1987",
       "incorrect_answers": ["2013", "1983", "1995"]
     },
@@ -813,7 +813,7 @@
       "type": "multiple",
       "difficulty": "hard",
       "category": "Entertainment: Japanese Anime &amp; Manga",
-      "question": "Who was the Director of the 1988 Anime film &quot;Grave of the Fireflies&quot;?",
+      "question": "Who was the Director of the 1988 Anime film Grave of the Fireflies?",
       "correct_answer": "Isao Takahata",
       "incorrect_answers": ["Hayao Miyazaki", "Satoshi Kon", "Sunao Katabuchi"]
     }
