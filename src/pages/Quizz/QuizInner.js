@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./css/quiz.css";
 import quizJson from "./QuizData.json";
+import QuizPopup from "./QuizPopup";
 
 function QuizInner() {
   const params = useParams();
@@ -25,6 +26,7 @@ function QuizInner() {
   const [qIndex, setqIndex] = useState(0);
   const [answersArray, setanswersArray] = useState([]);
   const [disableQuiz, setdisableQuiz] = useState(false);
+  const [quizEnded, setquizEnded] = useState(false);
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -52,6 +54,10 @@ function QuizInner() {
       setTimeout(() => {
         setqIndex((prev) => prev + 1);
       }, 500);
+    } else {
+      setTimeout(() => {
+        setquizEnded(true);
+      }, 1000);
     }
   };
 
@@ -74,6 +80,7 @@ function QuizInner() {
   return (
     <div className="quin_inner_fluid">
       <div className="quin_inner_container">
+        {quizEnded && <QuizPopup answersArray={answersArray} />}
         <div className="quiz_question">{questions?.question}</div>
         <div className="pr_fluid">
           <div className="quiz_percens">
