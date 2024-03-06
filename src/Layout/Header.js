@@ -1,6 +1,10 @@
 import React from "react";
 import "./Header.css";
 import { Link, Outlet } from "react-router-dom";
+import SlotImg from "./imgs/slot-machine.png";
+import WheelImg from "./imgs/fortune-wheel.png";
+import FlipImg from "./imgs/card-game.png";
+import QuizGame from "./imgs/answer.png";
 
 function Header() {
   return (
@@ -9,16 +13,31 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <Link to="/slot">Slot</Link>
+              <Link to="/slot">
+                <img src={SlotImg} />
+                Slot
+              </Link>
             </li>
             <li>
-              <Link to="/wheel">Wheel</Link>
+              <Link to="/wheel">
+                {" "}
+                <img src={WheelImg} />
+                Wheel
+              </Link>
             </li>
             <li>
-              <Link to="/flip-game">Flip-game</Link>
+              <Link to="/flip-game">
+                {" "}
+                <img src={FlipImg} />
+                Flip-game
+              </Link>
             </li>
             <li>
-              <Link to="/quiz">Quiz</Link>
+              <Link to="/quiz">
+                {" "}
+                <img src={QuizGame} />
+                Quiz
+              </Link>
             </li>
           </ul>
         </nav>

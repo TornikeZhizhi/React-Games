@@ -26,4 +26,25 @@
 .header a {
   color: #fff;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.header li img {
+  width: 30px;
+  height: 28px;
+  object-fit: contain;
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 940px) {
+  .header {
+    padding: 0 1%;
+  }
+
+  .header ul {
+    width: 90vw;
+    overflow-x: scroll;
+  }
 }
