@@ -5,6 +5,8 @@
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   max-width: 1000px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .sidebar {
@@ -110,9 +112,10 @@ tr span {
   font-family: "Akshar", sans-serif;
   font-weight: bold;
   margin: 1px;
+  text-transform: capitalize;
 }
 .tbl_box:first-child {
-  width: 144px;
+  /* width: 144px; */
   font-weight: normal;
 }
 
@@ -133,7 +136,7 @@ tr span {
   }
 
   100% {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -142,8 +145,23 @@ tr span {
 }
 
 .fas.disable {
-  opacity: 0.5;
   animation: unset;
+  color: mediumspringgreen;
+}
+
+.table_common_box:nth-child(7) {
+  margin-bottom: 10px;
+}
+
+.tbl_titles {
+  width: 155px;
+}
+
+.tbl_box.green {
+  color: green;
+}
+.tbl_box.red {
+  color: red;
 }
 
 /* media  */
