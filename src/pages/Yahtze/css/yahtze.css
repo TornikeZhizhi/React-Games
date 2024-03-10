@@ -1,0 +1,116 @@
+.yahtze_container {
+  width: 100%;
+  display: flex;
+  /* height: 70%; */
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background: purple;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.sidebar button {
+  padding: 5px 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: purple;
+  border: none;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Akshar", sans-serif;
+  font-size: 30px;
+  color: #fff;
+  background-color: orangered;
+}
+
+.sidebar h1 {
+  color: #fff;
+  font-family: "Akshar", sans-serif;
+}
+.ScoreTable {
+  background: white;
+  width: 50%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+table {
+  width: 80%;
+  border-spacing: 0;
+  /*   margin: 0 auto; */
+  /*   min-width: 400px; */
+}
+
+td {
+  border-bottom: 1px solid black;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-family: "Akshar", sans-serif;
+}
+td:first-child {
+  text-align: left;
+}
+td:nth-child(2) {
+  text-align: right;
+}
+
+.dice-container i {
+  font-size: 5rem;
+  color: #fff;
+  margin-right: 5px;
+}
+
+tr span {
+  background: rgba(33, 150, 243, 1);
+  padding: 0.3rem;
+  border-radius: 1rem;
+  color: white;
+}
+
+.ScoreTable h2 {
+  font-family: "Akshar", sans-serif;
+}
+
+.yahtze_fluid {
+  padding: 20px 0 0;
+}
+
+.table_common_box {
+  display: flex;
+  align-items: center;
+}
+
+.tbl_box {
+  height: 30px;
+  width: 65px;
+  border: 1px solid black;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Akshar", sans-serif;
+  font-weight: bold;
+  margin: 1px;
+}
+.tbl_box:first-child {
+  width: 144px;
+  font-weight: normal;
+}

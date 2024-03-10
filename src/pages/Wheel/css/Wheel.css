@@ -74,6 +74,9 @@ html {
     background-image: url("../img/wheel_border.png");
   }
 }
+.bonus-game {
+  padding-top: 5%;
+}
 
 .bonus-game .wheel {
   width: 436px;

@@ -90,7 +90,6 @@ function FlipGame() {
     startTimer();
     seTtime(0);
     setpopupToggler(false);
-    console.log("ss");
     if (audioWinSoundRef.current) {
       audioWinSoundRef.current.pause();
       audioWinSoundRef.current.currentTime = 0;

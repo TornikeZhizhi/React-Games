@@ -159,9 +159,8 @@
 .quiz_percens {
   position: absolute;
   top: -24px;
-  font-style: italic;
   left: 0;
-  /* font-family: "Akshar", sans-serif; */
+  font-family: "Akshar", sans-serif;
   color: #260f97;
 }
 .quiz_progress {
