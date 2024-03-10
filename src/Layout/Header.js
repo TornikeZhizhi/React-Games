@@ -5,6 +5,7 @@ import SlotImg from "./imgs/slot-machine.png";
 import WheelImg from "./imgs/fortune-wheel.png";
 import FlipImg from "./imgs/card-game.png";
 import QuizGame from "./imgs/answer.png";
+import DiceGame from "./imgs/dice.png";
 
 function Header() {
   return (
@@ -37,6 +38,13 @@ function Header() {
                 {" "}
                 <img src={QuizGame} />
                 Quiz
+              </Link>
+            </li>
+            <li>
+              <Link to="/yahtze">
+                {" "}
+                <img src={DiceGame} />
+                Yahtzee
               </Link>
             </li>
           </ul>

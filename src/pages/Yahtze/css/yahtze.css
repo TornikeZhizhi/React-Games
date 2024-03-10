@@ -35,6 +35,7 @@
 .sidebar h1 {
   color: #fff;
   font-family: "Akshar", sans-serif;
+  margin-bottom: 20px;
 }
 .ScoreTable {
   background: white;
@@ -113,4 +114,63 @@ tr span {
 .tbl_box:first-child {
   width: 144px;
   font-weight: normal;
+}
+
+.tbl_box.bold {
+  font-weight: bold;
+}
+.tbl_box.purple {
+  background-color: purple;
+  color: #fff;
+}
+
+.rotateAnime {
+  animation: rotateAnime 0.4s linear forwards;
+}
+@keyframes rotateAnime {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.fas {
+  cursor: pointer;
+}
+
+.fas.disable {
+  opacity: 0.5;
+  animation: unset;
+}
+
+/* media  */
+@media only screen and (max-width: 940px) {
+  .yahtze_container {
+    flex-wrap: wrap;
+  }
+
+  .sidebar,
+  .ScoreTable {
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .dice-container i {
+    font-size: 4rem;
+  }
+  .sidebar h1 {
+    color: #fff;
+    font-family: "Akshar", sans-serif;
+    margin-bottom: 10px;
+  }
+  .sidebar button {
+    padding: 4px 39px;
+
+    margin-top: 12px;
+
+    font-size: 20px;
+  }
 }

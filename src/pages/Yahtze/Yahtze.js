@@ -1,20 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "./css/yahtze.css";
+import Dice from "./Dice.js";
 
 function Yahtze() {
+  const [diceArray, setdiceArray] = useState([
+    { number: 1, active: true },
+    { number: 2, active: true },
+    { number: 3, active: false },
+    { number: 4, active: true },
+    { number: 5, active: true },
+  ]);
+
+  const diceDisableHandler = (ind) => {
+    const updatedDiceArray = [...diceArray];
+    if (ind >= 0 && ind < updatedDiceArray.length) {
+      updatedDiceArray[ind].active = !updatedDiceArray[ind].active;
+      setdiceArray(updatedDiceArray);
+    }
+  };
+
+  const rolHandler = () => {
+    const diceRandomArray = diceArray.map((dice) => {
+      if (dice.active) {
+        return { number: Math.floor(Math.random() * 6) + 1, active: true };
+      } else {
+        return { number: dice.number, active: false };
+      }
+    });
+
+    setdiceArray(diceRandomArray);
+  };
+
   return (
     <div className="yahtze_fluid">
       <div className="yahtze_container">
         <div className="sidebar">
           <h1>Yahtzee!</h1>
           <div className="dice-container">
-            <i className="fas fa-dice-one"></i>
-            <i className="fas fa-dice-two"></i>
-            <i className="fas fa-dice-three"></i>
-            <i className="fas fa-dice-four"></i>
-            <i className="fas fa-dice-five"></i>
+            <Dice
+              diceArray={diceArray}
+              diceDisableHandler={diceDisableHandler}
+            />
           </div>
-          <button>Roll</button>
+          <button onClick={rolHandler}>Roll</button>
         </div>
         <div className="ScoreTable">
           <h2>Score Table</h2>
@@ -22,8 +50,8 @@ function Yahtze() {
           <div className="table_container">
             <div className="table_common_box">
               <div className="tbl_box"></div>
-              <div className="tbl_box">You</div>
-              <div className="tbl_box">Enemy</div>
+              <div className="tbl_box bold purple">You</div>
+              <div className="tbl_box bold purple">Enemy</div>
             </div>
             <div className="table_common_box">
               <div className="tbl_box">Ones</div>
@@ -87,14 +115,14 @@ function Yahtze() {
               <div className="tbl_box"></div>
             </div>
             <div className="table_common_box">
-              <div className="tbl_box">YAHTZEE</div>
+              <div className="tbl_box bold">YAHTZEE</div>
               <div className="tbl_box"></div>
               <div className="tbl_box"></div>
             </div>
             <div className="table_common_box">
-              <div className="tbl_box">TOTAL SCORE</div>
-              <div className="tbl_box"></div>
-              <div className="tbl_box"></div>
+              <div className="tbl_box bold purple">TOTAL SCORE</div>
+              <div className="tbl_box bold purple"></div>
+              <div className="tbl_box bold purple"></div>
             </div>
           </div>
         </div>
