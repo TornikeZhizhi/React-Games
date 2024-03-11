@@ -56,9 +56,6 @@ function Yahtze() {
 
   const updateQuantity = (player, playerItem, value) => {
     if (player == "you") {
-      if (playerItem == "twoos") {
-        console.log(value);
-      }
       setscoreTable((prevState) => {
         return {
           ...prevState,
@@ -181,9 +178,37 @@ function Yahtze() {
         return false;
       };
       const hasFullHouse = findFullHouse(diceRandomArray);
-      // Example usage
+
       if (hasFullHouse && item === "Full House") {
         updateQuantity("you", item, 25);
+      }
+
+      // small straight
+
+      const findSmallStraight = (testArray) => {
+        // Sort the array of numbers
+        const sortedNumbers = testArray
+          .map((item) => item.number)
+          .sort((a, b) => a - b);
+
+        // Iterate through the sorted array to find a sequence of four consecutive numbers
+        for (let i = 0; i <= sortedNumbers.length - 4; i++) {
+          if (
+            sortedNumbers[i] === sortedNumbers[i + 1] - 1 &&
+            sortedNumbers[i + 1] === sortedNumbers[i + 2] - 1 &&
+            sortedNumbers[i + 2] === sortedNumbers[i + 3] - 1
+          ) {
+            return true; // Found a small straight
+          }
+        }
+
+        return false; // Did not find a small straight
+      };
+
+      // Example usage
+      const hasSmallStraight = findSmallStraight(diceRandomArray);
+      if (hasSmallStraight && item === "Small straight") {
+        updateQuantity("you", item, 30);
       }
     };
 
@@ -197,6 +222,7 @@ function Yahtze() {
     tableCheckerInner(diceRandomArray, "Three of a kind");
     tableCheckerInner(diceRandomArray, "Four of a kind");
     tableCheckerInner(diceRandomArray, "Full House");
+    tableCheckerInner(diceRandomArray, "Small straight");
   };
 
   const rolHandler = () => {
