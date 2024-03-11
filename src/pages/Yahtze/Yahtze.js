@@ -4,15 +4,16 @@ import Dice from "./Dice.js";
 import Table from "./Table.js";
 import matchSound from "./music/wins.mp3";
 import diceSound from "./music/dice.mp3";
+import FinalModal from "./FinalModal.js";
 function Yahtze() {
   const matchAudio = new Audio(matchSound);
   const diceAudio = new Audio(diceSound);
 
   const [gameDefault, setgameDefault] = useState(false);
-
+  const [modalToggler, setmodalToggler] = useState(false);
   const [youRollCounter, setyouRollCounter] = useState(3);
   const [enemyRollCounter, setenemyRollCounter] = useState(3);
-  const [finalScore, setFinalScore] = useState({ you: 0, enemy: 0 });
+  const [finalScore, setFinalScore] = useState({ you: 0, enemy: 3 });
   const [diceArray, setdiceArray] = useState([
     { number: 1, active: true },
     { number: 2, active: true },
@@ -71,7 +72,7 @@ function Yahtze() {
         return {
           ...prevState,
           Your: prevState.Your.map((item) => {
-            if (item.item === playerItem) {
+            if (item.item === playerItem && item.completed === false) {
               return { ...item, quantity: value };
             }
             return item;
@@ -83,7 +84,7 @@ function Yahtze() {
         return {
           ...prevState,
           Enemy: prevState.Enemy.map((item) => {
-            if (item.item === playerItem) {
+            if (item.item === playerItem && item.completed === false) {
               return { ...item, quantity: value };
             }
             return item;
@@ -439,6 +440,10 @@ function Yahtze() {
             const sumYour = calculateSum("Your");
             const sumEnemy = calculateSum("Enemy");
             setFinalScore({ you: sumYour, enemy: sumEnemy });
+
+            setTimeout(() => {
+              setmodalToggler(true);
+            }, 2000);
           }
         }, 1000);
       }
@@ -448,6 +453,7 @@ function Yahtze() {
   };
 
   const resetGame = () => {
+    setmodalToggler(false);
     setFinalScore({ you: 0, enemy: 0 });
     setyouRollCounter(3);
     setenemyRollCounter(3);
@@ -473,6 +479,9 @@ function Yahtze() {
     <div className="yahtze_fluid">
       <div className="yahtze_container">
         <div className="sidebar">
+          {modalToggler && (
+            <FinalModal resetGame={resetGame} finalScore={finalScore} />
+          )}
           <h1>Yahtzee!</h1>
           <div className="dice-container">
             <Dice
