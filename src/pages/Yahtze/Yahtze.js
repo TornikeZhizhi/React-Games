@@ -497,6 +497,7 @@ function Yahtze() {
 
           <div className="table_container">
             <Table
+              gameDefault={gameDefault}
               gameTry={gameTry}
               finalScore={finalScore}
               chooseHandler={chooseHandler}

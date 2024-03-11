@@ -1,6 +1,12 @@
 import React from "react";
 
-function Table({ scoreTable, chooseHandler, finalScore, gameTry }) {
+function Table({
+  scoreTable,
+  chooseHandler,
+  finalScore,
+  gameTry,
+  gameDefault,
+}) {
   const onChooseHandler = (type, data) => {
     chooseHandler(type, data);
   };
@@ -32,7 +38,7 @@ function Table({ scoreTable, chooseHandler, finalScore, gameTry }) {
                   item.completed === true ? "completed" : ""
                 }`}
               >
-                {item.quantity}
+                {item.completed && item.quantity === "" ? 0 : item.quantity}
               </div>
             );
           })}
@@ -48,7 +54,7 @@ function Table({ scoreTable, chooseHandler, finalScore, gameTry }) {
                   item.completed === true ? "completed" : ""
                 }`}
               >
-                {item.quantity}
+                {item.completed && item.quantity === "" ? 0 : item.quantity}
               </div>
             );
           })}

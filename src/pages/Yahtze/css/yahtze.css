@@ -67,7 +67,10 @@ table {
   /*   margin: 0 auto; */
   /*   min-width: 400px; */
 }
-
+.dice-container {
+  display: flex;
+  align-items: center;
+}
 td {
   border-bottom: 1px solid black;
   padding: 0.5rem;
@@ -85,10 +88,12 @@ td:nth-child(2) {
   font-size: 5rem;
   color: #fff;
   margin-right: 5px;
-  transition: all 0.4s;
+  /* transition: all 0.4s; */
   width: 70px;
   height: 80px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dice-container i.fa-question {
@@ -113,6 +118,10 @@ tr span {
 .table_common_box {
   display: flex;
   align-items: center;
+}
+
+.table_common_box.disable {
+  pointer-events: none;
 }
 
 .tbl_box {
