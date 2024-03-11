@@ -24,7 +24,7 @@
   cursor: pointer;
   background-color: purple;
   border: none;
-  margin-top: 30px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,6 +32,12 @@
   font-size: 30px;
   color: #fff;
   background-color: orangered;
+  text-transform: capitalize;
+  transition: all 0.4s;
+}
+
+.sidebar button.disabled {
+  background-color: gray;
 }
 
 .sidebar h1 {
@@ -162,6 +168,16 @@ tr span {
 }
 .tbl_box.red {
   color: red;
+}
+
+.rol_counter {
+  background-color: #fff;
+  color: orangered;
+  font-family: "Akshar", sans-serif;
+  display: inline-block;
+  padding: 3px 19px;
+  border-radius: 3px;
+  margin: 25px 0 0px;
 }
 
 /* media  */

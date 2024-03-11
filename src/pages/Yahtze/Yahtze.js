@@ -4,6 +4,9 @@ import Dice from "./Dice.js";
 import Table from "./Table.js";
 
 function Yahtze() {
+  const [youRollCounter, setyouRollCounter] = useState(3);
+  const [enemyRollCounter, setenemyRollCounter] = useState(3);
+
   const [diceArray, setdiceArray] = useState([
     { number: 1, active: true },
     { number: 2, active: true },
@@ -30,7 +33,7 @@ function Yahtze() {
     ],
     Enemy: [
       { item: "ones", quantity: "", completed: false },
-      { item: "twoos", quantity: "3", completed: false },
+      { item: "twoos", quantity: "", completed: false },
       { item: "threes", quantity: "", completed: false },
       { item: "fours", quantity: "", completed: false },
       { item: "fives", quantity: "", completed: false },
@@ -278,6 +281,14 @@ function Yahtze() {
     tableCheckerInner(diceRandomArray, "Yahtzee");
   };
 
+  const rolInner = () => {
+    if (gameTry === "you") {
+      setyouRollCounter((prev) => prev - 1);
+    }
+    if (gameTry === "enemy") {
+      setenemyRollCounter((prev) => prev - 1);
+    }
+  };
   const rolHandler = () => {
     setscoreTable((prevState) => {
       return {
@@ -309,7 +320,7 @@ function Yahtze() {
         return { number: dice.number, active: false };
       }
     });
-
+    rolInner();
     tableChecker(diceRandomArray);
     setdiceArray(diceRandomArray);
   };
@@ -325,7 +336,18 @@ function Yahtze() {
               diceDisableHandler={diceDisableHandler}
             />
           </div>
-          <button onClick={rolHandler}>Roll</button>
+          <span className="rol_counter">
+            {gameTry === "you" ? youRollCounter : enemyRollCounter} Roll Left
+          </span>
+          <button
+            onClick={rolHandler}
+            disabled={youRollCounter === 0 || enemyRollCounter === 0}
+            className={
+              youRollCounter === 0 || enemyRollCounter === 0 ? "disabled" : ""
+            }
+          >
+            {gameTry} Roll
+          </button>
         </div>
         <div className="ScoreTable">
           <h2>Score Table</h2>
