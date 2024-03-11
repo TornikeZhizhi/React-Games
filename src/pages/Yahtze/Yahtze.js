@@ -125,6 +125,31 @@ function Yahtze() {
           updateQuantity("you", item, tripleOrMoreNumbers * 5);
         }
       }
+      if (item === "Four of a kind") {
+        const findTripleOrMore = (testArray) => {
+          const occurrencesMap = {};
+
+          // Count occurrences of each number
+          testArray.forEach((item) => {
+            if (occurrencesMap[item.number]) {
+              occurrencesMap[item.number]++;
+            } else {
+              occurrencesMap[item.number] = 1;
+            }
+          });
+
+          // Find numbers with three or more occurrences
+          const tripleOrMoreNumbers = Object.keys(occurrencesMap).filter(
+            (number) => occurrencesMap[number] >= 4
+          );
+
+          return tripleOrMoreNumbers;
+        };
+        const tripleOrMoreNumbers = findTripleOrMore(diceRandomArray);
+        if (tripleOrMoreNumbers.length > 0) {
+          updateQuantity("you", item, tripleOrMoreNumbers * 7);
+        }
+      }
     };
 
     tableCheckerInner(diceRandomArray, "ones", 1);
@@ -135,6 +160,7 @@ function Yahtze() {
     tableCheckerInner(diceRandomArray, "sixes", 6);
 
     tableCheckerInner(diceRandomArray, "Three of a kind");
+    tableCheckerInner(diceRandomArray, "Four of a kind");
   };
 
   const rolHandler = () => {
