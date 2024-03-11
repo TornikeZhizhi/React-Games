@@ -119,6 +119,12 @@ tr span {
   font-weight: bold;
   margin: 1px;
   text-transform: capitalize;
+  transition: all 0.2s;
+}
+
+.you_row .tbl_box,
+.enemy_row .tbl_box {
+  cursor: pointer;
 }
 .tbl_box:first-child {
   /* width: 144px; */
@@ -131,6 +137,10 @@ tr span {
 .tbl_box.purple {
   background-color: purple;
   color: #fff;
+}
+
+.tbl_box.completed {
+  background-color: aquamarine;
 }
 
 .rotateAnime {

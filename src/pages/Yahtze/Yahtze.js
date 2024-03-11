@@ -97,6 +97,8 @@ function Yahtze() {
         if (occurrences > 0) {
           if (gameTry === "you") {
             updateQuantity("you", item, occurrences * multiplier);
+          } else {
+            updateQuantity("enemy", item, occurrences * multiplier);
           }
         }
       }
@@ -121,8 +123,14 @@ function Yahtze() {
           return tripleOrMoreNumbers;
         };
         const tripleOrMoreNumbers = findTripleOrMore(diceRandomArray);
-        if (tripleOrMoreNumbers.length > 0) {
-          updateQuantity("you", item, tripleOrMoreNumbers * 5);
+        if (gameTry === "you") {
+          if (tripleOrMoreNumbers.length > 0) {
+            updateQuantity("you", item, tripleOrMoreNumbers * 5);
+          }
+        } else {
+          if (tripleOrMoreNumbers.length > 0) {
+            updateQuantity("enemy", item, tripleOrMoreNumbers * 5);
+          }
         }
       }
       if (item === "Four of a kind") {
@@ -146,8 +154,14 @@ function Yahtze() {
           return tripleOrMoreNumbers;
         };
         const tripleOrMoreNumbers = findTripleOrMore(diceRandomArray);
-        if (tripleOrMoreNumbers.length > 0) {
-          updateQuantity("you", item, tripleOrMoreNumbers * 10);
+        if (gameTry === "you") {
+          if (tripleOrMoreNumbers.length > 0) {
+            updateQuantity("you", item, tripleOrMoreNumbers * 10);
+          }
+        } else {
+          if (tripleOrMoreNumbers.length > 0) {
+            updateQuantity("enemy", item, tripleOrMoreNumbers * 10);
+          }
         }
       }
       // full house
@@ -181,9 +195,14 @@ function Yahtze() {
         return false;
       };
       const hasFullHouse = findFullHouse(diceRandomArray);
-
-      if (hasFullHouse && item === "Full House") {
-        updateQuantity("you", item, 25);
+      if (gameTry === "you") {
+        if (hasFullHouse && item === "Full House") {
+          updateQuantity("you", item, 25);
+        }
+      } else {
+        if (hasFullHouse && item === "Full House") {
+          updateQuantity("enemy", item, 25);
+        }
       }
 
       // small straight
@@ -208,9 +227,14 @@ function Yahtze() {
       };
 
       const hasSmallStraight = findSmallStraight(diceRandomArray);
-
-      if (hasSmallStraight && item === "Small straight") {
-        updateQuantity("you", item, 30);
+      if (gameTry === "you") {
+        if (hasSmallStraight && item === "Small straight") {
+          updateQuantity("you", item, 30);
+        }
+      } else {
+        if (hasSmallStraight && item === "Small straight") {
+          updateQuantity("enemy", item, 30);
+        }
       }
 
       // large straight
@@ -232,8 +256,14 @@ function Yahtze() {
       };
 
       const hasLargeStraight = findLargeStraight(diceRandomArray);
-      if (hasSmallStraight && item === "Large straight") {
-        updateQuantity("you", item, 40);
+      if (gameTry === "you") {
+        if (hasLargeStraight && item === "Large straight") {
+          updateQuantity("you", item, 40);
+        }
+      } else {
+        if (hasLargeStraight && item === "Large straight") {
+          updateQuantity("enemy", item, 40);
+        }
       }
 
       // chance
@@ -244,11 +274,13 @@ function Yahtze() {
 
         return sum;
       };
-
-      // Example usage
       const chanceScore = calculateChance(diceRandomArray);
       if (item === "Chance") {
-        updateQuantity("you", item, chanceScore);
+        if (gameTry == "you") {
+          updateQuantity("you", item, chanceScore);
+        } else {
+          updateQuantity("enemy", item, chanceScore);
+        }
       }
 
       // yahtzee
@@ -261,7 +293,11 @@ function Yahtze() {
       // Example usage
       const isYahtzee = checkYahtzee(diceRandomArray);
       if (isYahtzee && item === "Yahtzee") {
-        updateQuantity("you", item, 50);
+        if (gameTry == "you") {
+          updateQuantity("you", item, 50);
+        } else {
+          updateQuantity("enemy", item, 50);
+        }
       }
     };
 
@@ -325,6 +361,66 @@ function Yahtze() {
     setdiceArray(diceRandomArray);
   };
 
+  const chooseHandler = (type, data) => {
+    const updatedDiceArray = diceArray.map((die) => ({ ...die, active: true }));
+    setdiceArray(updatedDiceArray);
+    setgameTry((prevTry) => (prevTry === "you" ? "enemy" : "you"));
+    setenemyRollCounter(3);
+    setyouRollCounter(3);
+    if (type === "you") {
+      setscoreTable((prevState) => {
+        return {
+          ...prevState,
+          Your: prevState.Your.map((item) => {
+            if (item.item === data) {
+              return { ...item, completed: true };
+            } else {
+              if (item.completed === false) {
+                return { ...item, quantity: "" };
+              }
+            }
+            return item;
+          }),
+        };
+      });
+    }
+
+    if (type === "enemy") {
+      const completedTrueCount = scoreTable.Enemy.reduce((count, item) => {
+        return count + (item.completed ? 1 : 0);
+      }, 0);
+
+      const allCompletedExceptOne =
+        completedTrueCount === scoreTable.Enemy.length - 1 &&
+        scoreTable.Enemy.some((item) => !item.completed);
+
+      setscoreTable((prevState) => {
+        return {
+          ...prevState,
+          Enemy: prevState.Enemy.map((item) => {
+            if (item.item === data) {
+              return { ...item, completed: true };
+            } else {
+              if (item.completed === false) {
+                return { ...item, quantity: "" };
+              }
+            }
+            return item;
+          }),
+        };
+      });
+      // game finished
+      setTimeout(function () {
+        if (allCompletedExceptOne) {
+          console.log(
+            "All completed are true, except one, in the Enemy array."
+          );
+        }
+      }, 1000);
+    }
+  };
+
+  const resetGame = () => {};
   return (
     <div className="yahtze_fluid">
       <div className="yahtze_container">
@@ -353,7 +449,7 @@ function Yahtze() {
           <h2>Score Table</h2>
 
           <div className="table_container">
-            <Table scoreTable={scoreTable} />
+            <Table chooseHandler={chooseHandler} scoreTable={scoreTable} />
           </div>
         </div>
       </div>

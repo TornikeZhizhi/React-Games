@@ -1,6 +1,9 @@
 import React from "react";
 
-function Table({ scoreTable }) {
+function Table({ scoreTable, chooseHandler }) {
+  const onChooseHandler = (type, data) => {
+    chooseHandler(type, data);
+  };
   return (
     <>
       <div className="table_common_box">
@@ -22,7 +25,13 @@ function Table({ scoreTable }) {
         <div className="you_row">
           {scoreTable.Your.map((item, index) => {
             return (
-              <div key={index} className="tbl_box bold green">
+              <div
+                key={index}
+                onClick={() => onChooseHandler("you", item.item)}
+                className={`tbl_box bold green ${
+                  item.completed === true ? "completed" : ""
+                }`}
+              >
                 {item.quantity}
               </div>
             );
@@ -32,7 +41,13 @@ function Table({ scoreTable }) {
         <div className="enemy_row">
           {scoreTable.Enemy.map((item, index) => {
             return (
-              <div key={index} className="tbl_box bold red">
+              <div
+                key={index}
+                onClick={() => onChooseHandler("enemy", item.item)}
+                className={`tbl_box bold red ${
+                  item.completed === true ? "completed" : ""
+                }`}
+              >
                 {item.quantity}
               </div>
             );
