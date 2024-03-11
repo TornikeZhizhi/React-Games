@@ -204,12 +204,61 @@ function Yahtze() {
         return false; // Did not find a small straight
       };
 
-      // Example usage
       const hasSmallStraight = findSmallStraight(diceRandomArray);
-      console.log("Has Small Straight:", hasSmallStraight);
 
       if (hasSmallStraight && item === "Small straight") {
         updateQuantity("you", item, 30);
+      }
+
+      // large straight
+      const findLargeStraight = (testArray) => {
+        // Extract unique numbers from the array
+        const uniqueNumbers = [
+          ...new Set(testArray.map((item) => item.number)),
+        ];
+
+        // Check if there is a sequence of five consecutive numbers
+        if (uniqueNumbers.length === 5) {
+          const sortedNumbers = uniqueNumbers.sort((a, b) => a - b);
+          if (sortedNumbers[4] - sortedNumbers[0] === 4) {
+            return true; // Found a large straight
+          }
+        }
+
+        return false; // Did not find a large straight
+      };
+
+      const hasLargeStraight = findLargeStraight(diceRandomArray);
+      if (hasSmallStraight && item === "Large straight") {
+        updateQuantity("you", item, 40);
+      }
+
+      // chance
+
+      const calculateChance = (testArray) => {
+        // Use reduce to sum up all the numbers
+        const sum = testArray.reduce((total, item) => total + item.number, 0);
+
+        return sum;
+      };
+
+      // Example usage
+      const chanceScore = calculateChance(diceRandomArray);
+      if (item === "Chance") {
+        updateQuantity("you", item, chanceScore);
+      }
+
+      // yahtzee
+      const checkYahtzee = (testArray) => {
+        // Check if all numbers are the same
+        const firstNumber = testArray[0].number;
+        return testArray.every((item) => item.number === firstNumber);
+      };
+
+      // Example usage
+      const isYahtzee = checkYahtzee(diceRandomArray);
+      if (isYahtzee && item === "Yahtzee") {
+        updateQuantity("you", item, 50);
       }
     };
 
@@ -224,6 +273,9 @@ function Yahtze() {
     tableCheckerInner(diceRandomArray, "Four of a kind");
     tableCheckerInner(diceRandomArray, "Full House");
     tableCheckerInner(diceRandomArray, "Small straight");
+    tableCheckerInner(diceRandomArray, "Large straight");
+    tableCheckerInner(diceRandomArray, "Chance");
+    tableCheckerInner(diceRandomArray, "Yahtzee");
   };
 
   const rolHandler = () => {
