@@ -13,7 +13,7 @@ function Yahtze() {
   const [modalToggler, setmodalToggler] = useState(false);
   const [youRollCounter, setyouRollCounter] = useState(3);
   const [enemyRollCounter, setenemyRollCounter] = useState(3);
-  const [finalScore, setFinalScore] = useState({ you: 0, enemy: 3 });
+  const [finalScore, setFinalScore] = useState({ you: 0, enemy: 0 });
   const [diceArray, setdiceArray] = useState([
     { number: 1, active: true },
     { number: 2, active: true },
