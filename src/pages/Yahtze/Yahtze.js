@@ -91,9 +91,13 @@ function Yahtze() {
         (dice) => dice.number === multiplier
       ).length;
 
-      if (occurrences > 0) {
-        if (gameTry === "you") {
-          updateQuantity("you", item, occurrences * multiplier);
+      const validItems = ["ones", "twoos", "threes", "fours", "fives", "sixes"];
+
+      if (validItems.includes(item)) {
+        if (occurrences > 0) {
+          if (gameTry === "you") {
+            updateQuantity("you", item, occurrences * multiplier);
+          }
         }
       }
       if (item === "Three of a kind") {
@@ -117,7 +121,9 @@ function Yahtze() {
           return tripleOrMoreNumbers;
         };
         const tripleOrMoreNumbers = findTripleOrMore(diceRandomArray);
-        updateQuantity("you", item, tripleOrMoreNumbers * 5);
+        if (tripleOrMoreNumbers.length > 0) {
+          updateQuantity("you", item, tripleOrMoreNumbers * 5);
+        }
       }
     };
 
@@ -128,7 +134,7 @@ function Yahtze() {
     tableCheckerInner(diceRandomArray, "fives", 5);
     tableCheckerInner(diceRandomArray, "sixes", 6);
 
-    tableCheckerInner(diceRandomArray, "Three of a kind", 6);
+    tableCheckerInner(diceRandomArray, "Three of a kind");
   };
 
   const rolHandler = () => {
