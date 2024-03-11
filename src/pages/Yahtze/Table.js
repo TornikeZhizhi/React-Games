@@ -10,20 +10,32 @@ function Table({ scoreTable }) {
       </div>
       <div className="table_common_box">
         <div className="tbl_titles_row">
-          {scoreTable.Your.map((item) => {
-            return <div className="tbl_box bold tbl_titles">{item.item}</div>;
+          {scoreTable.Your.map((item, index) => {
+            return (
+              <div key={index} className="tbl_box bold tbl_titles">
+                {item.item}
+              </div>
+            );
           })}
         </div>
 
         <div className="you_row">
-          {scoreTable.Your.map((item) => {
-            return <div className="tbl_box bold green">dd</div>;
+          {scoreTable.Your.map((item, index) => {
+            return (
+              <div key={index} className="tbl_box bold green">
+                {item.quantity}
+              </div>
+            );
           })}
         </div>
 
         <div className="enemy_row">
-          {scoreTable.Enemy.map((item) => {
-            return <div className="tbl_box bold red">dd</div>;
+          {scoreTable.Enemy.map((item, index) => {
+            return (
+              <div key={index} className="tbl_box bold red">
+                dd
+              </div>
+            );
           })}
         </div>
 

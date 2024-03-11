@@ -15,7 +15,7 @@ function Yahtze() {
   const [scoreTable, setscoreTable] = useState({
     Your: [
       { item: "ones", quantity: "", completed: false },
-      { item: "twoos", quantity: "2", completed: false },
+      { item: "twoos", quantity: "", completed: false },
       { item: "threes", quantity: "", completed: false },
       { item: "fours", quantity: "", completed: false },
       { item: "fives", quantity: "", completed: false },
@@ -44,6 +44,7 @@ function Yahtze() {
       { item: "Yahtzee", quantity: "", completed: false },
     ],
   });
+  const [gameTry, setgameTry] = useState("you");
 
   const diceDisableHandler = (ind) => {
     const updatedDiceArray = [...diceArray];
@@ -53,18 +54,105 @@ function Yahtze() {
     }
   };
 
+  const updateQuantity = (player, playerItem, value) => {
+    if (player == "you") {
+      if (playerItem == "twoos") {
+        console.log(value);
+      }
+      setscoreTable((prevState) => {
+        return {
+          ...prevState,
+          Your: prevState.Your.map((item) => {
+            if (item.item === playerItem) {
+              return { ...item, quantity: value };
+            }
+            return item;
+          }),
+        };
+      });
+    } else {
+      setscoreTable((prevState) => {
+        return {
+          ...prevState,
+          Enemy: prevState.Enemy.map((item) => {
+            if (item.item === playerItem) {
+              return { ...item, quantity: value };
+            }
+            return item;
+          }),
+        };
+      });
+    }
+  };
+
+  const tableChecker = (diceRandomArray) => {
+    const tableCheckerInner = (diceRandomArray, item, multiplier) => {
+      const occurrences = diceRandomArray.filter(
+        (dice) => dice.number === multiplier
+      ).length;
+
+      if (occurrences > 0) {
+        if (gameTry === "you") {
+          updateQuantity("you", item, occurrences * multiplier);
+        }
+      }
+      if (item === "Three of a kind") {
+        const findTripleOrMore = (testArray) => {
+          const occurrencesMap = {};
+
+          // Count occurrences of each number
+          testArray.forEach((item) => {
+            if (occurrencesMap[item.number]) {
+              occurrencesMap[item.number]++;
+            } else {
+              occurrencesMap[item.number] = 1;
+            }
+          });
+
+          // Find numbers with three or more occurrences
+          const tripleOrMoreNumbers = Object.keys(occurrencesMap).filter(
+            (number) => occurrencesMap[number] >= 3
+          );
+
+          return tripleOrMoreNumbers;
+        };
+        const tripleOrMoreNumbers = findTripleOrMore(diceRandomArray);
+        updateQuantity("you", item, tripleOrMoreNumbers * 5);
+      }
+    };
+
+    tableCheckerInner(diceRandomArray, "ones", 1);
+    tableCheckerInner(diceRandomArray, "twoos", 2);
+    tableCheckerInner(diceRandomArray, "threes", 3);
+    tableCheckerInner(diceRandomArray, "fours", 4);
+    tableCheckerInner(diceRandomArray, "fives", 5);
+    tableCheckerInner(diceRandomArray, "sixes", 6);
+
+    tableCheckerInner(diceRandomArray, "Three of a kind", 6);
+  };
+
   const rolHandler = () => {
+    setscoreTable((prevState) => {
+      return {
+        ...prevState,
+        Your: prevState.Your.map((item) => {
+          if (item.completed === false) {
+            return { ...item, quantity: "" };
+          }
+          return item;
+        }),
+      };
+    });
+
     const diceRandomArray = diceArray.map((dice) => {
       if (dice.active) {
-        return { number: Math.floor(Math.random() * 2) + 1, active: true };
+        return { number: Math.floor(Math.random() * 6) + 1, active: true };
       } else {
         return { number: dice.number, active: false };
       }
     });
 
-    // const occurrences = diceRandomArray.filter(
-    //   (dice) => dice.number === 2
-    // ).length;
+    tableChecker(diceRandomArray);
     setdiceArray(diceRandomArray);
   };
 
