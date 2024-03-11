@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import "./css/yahtze.css";
 import Dice from "./Dice.js";
 import Table from "./Table.js";
-
+import matchSound from "./music/wins.mp3";
+import diceSound from "./music/dice.mp3";
 function Yahtze() {
+  const matchAudio = new Audio(matchSound);
+  const diceAudio = new Audio(diceSound);
+
   const [gameDefault, setgameDefault] = useState(false);
 
   const [youRollCounter, setyouRollCounter] = useState(3);
@@ -330,6 +334,7 @@ function Yahtze() {
     }
   };
   const rolHandler = () => {
+    diceAudio.play();
     setgameDefault(true);
     setscoreTable((prevState) => {
       return {
@@ -368,6 +373,7 @@ function Yahtze() {
 
   const chooseHandler = (type, data) => {
     if (gameDefault) {
+      matchAudio.play();
       const updatedDiceArray = diceArray.map((die) => ({
         ...die,
         active: true,
@@ -433,10 +439,6 @@ function Yahtze() {
             const sumYour = calculateSum("Your");
             const sumEnemy = calculateSum("Enemy");
             setFinalScore({ you: sumYour, enemy: sumEnemy });
-
-            // setTimeout(() => {
-            //   resetGame();
-            // }, 1000);
           }
         }, 1000);
       }
