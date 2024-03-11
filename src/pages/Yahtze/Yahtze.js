@@ -186,18 +186,17 @@ function Yahtze() {
       // small straight
 
       const findSmallStraight = (testArray) => {
-        // Sort the array of numbers
-        const sortedNumbers = testArray
-          .map((item) => item.number)
-          .sort((a, b) => a - b);
+        // Extract unique numbers from the array
+        const uniqueNumbers = [
+          ...new Set(testArray.map((item) => item.number)),
+        ];
 
-        // Iterate through the sorted array to find a sequence of four consecutive numbers
+        // Sort the unique numbers
+        const sortedNumbers = uniqueNumbers.sort((a, b) => a - b);
+
+        // Check if there is a sequence of four consecutive numbers
         for (let i = 0; i <= sortedNumbers.length - 4; i++) {
-          if (
-            sortedNumbers[i] === sortedNumbers[i + 1] - 1 &&
-            sortedNumbers[i + 1] === sortedNumbers[i + 2] - 1 &&
-            sortedNumbers[i + 2] === sortedNumbers[i + 3] - 1
-          ) {
+          if (sortedNumbers[i + 3] - sortedNumbers[i] === 3) {
             return true; // Found a small straight
           }
         }
@@ -207,6 +206,8 @@ function Yahtze() {
 
       // Example usage
       const hasSmallStraight = findSmallStraight(diceRandomArray);
+      console.log("Has Small Straight:", hasSmallStraight);
+
       if (hasSmallStraight && item === "Small straight") {
         updateQuantity("you", item, 30);
       }
