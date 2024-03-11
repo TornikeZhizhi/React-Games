@@ -144,7 +144,7 @@ function Yahtze() {
         };
         const tripleOrMoreNumbers = findTripleOrMore(diceRandomArray);
         if (tripleOrMoreNumbers.length > 0) {
-          updateQuantity("you", item, tripleOrMoreNumbers * 7);
+          updateQuantity("you", item, tripleOrMoreNumbers * 10);
         }
       }
       // full house
@@ -283,6 +283,17 @@ function Yahtze() {
       return {
         ...prevState,
         Your: prevState.Your.map((item) => {
+          if (item.completed === false) {
+            return { ...item, quantity: "" };
+          }
+          return item;
+        }),
+      };
+    });
+    setscoreTable((prevState) => {
+      return {
+        ...prevState,
+        Enemy: prevState.Enemy.map((item) => {
           if (item.completed === false) {
             return { ...item, quantity: "" };
           }

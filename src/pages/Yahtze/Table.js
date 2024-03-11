@@ -33,7 +33,7 @@ function Table({ scoreTable }) {
           {scoreTable.Enemy.map((item, index) => {
             return (
               <div key={index} className="tbl_box bold red">
-                dd
+                {item.quantity}
               </div>
             );
           })}
