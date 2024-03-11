@@ -150,6 +150,41 @@ function Yahtze() {
           updateQuantity("you", item, tripleOrMoreNumbers * 7);
         }
       }
+      // full house
+      const findFullHouse = (testArray) => {
+        const occurrencesMap = {};
+
+        // Count occurrences of each number
+        testArray.forEach((item) => {
+          if (occurrencesMap[item.number]) {
+            occurrencesMap[item.number]++;
+          } else {
+            occurrencesMap[item.number] = 1;
+          }
+        });
+
+        // Find numbers with three occurrences
+        const tripleNumbers = Object.keys(occurrencesMap).filter(
+          (number) => occurrencesMap[number] === 3
+        );
+
+        // Find numbers with two occurrences
+        const doubleNumbers = Object.keys(occurrencesMap).filter(
+          (number) => occurrencesMap[number] === 2
+        );
+
+        // Check if there is at least one number with three occurrences and one number with two occurrences
+        if (tripleNumbers.length > 0 && doubleNumbers.length > 0) {
+          return true;
+        }
+
+        return false;
+      };
+      const hasFullHouse = findFullHouse(diceRandomArray);
+      // Example usage
+      if (hasFullHouse && item === "Full House") {
+        updateQuantity("you", item, 25);
+      }
     };
 
     tableCheckerInner(diceRandomArray, "ones", 1);
@@ -161,6 +196,7 @@ function Yahtze() {
 
     tableCheckerInner(diceRandomArray, "Three of a kind");
     tableCheckerInner(diceRandomArray, "Four of a kind");
+    tableCheckerInner(diceRandomArray, "Full House");
   };
 
   const rolHandler = () => {
