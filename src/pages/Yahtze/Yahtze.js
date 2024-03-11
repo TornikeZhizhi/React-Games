@@ -4,9 +4,11 @@ import Dice from "./Dice.js";
 import Table from "./Table.js";
 
 function Yahtze() {
+  const [gameDefault, setgameDefault] = useState(false);
+
   const [youRollCounter, setyouRollCounter] = useState(3);
   const [enemyRollCounter, setenemyRollCounter] = useState(3);
-
+  const [finalScore, setFinalScore] = useState({ you: 0, enemy: 0 });
   const [diceArray, setdiceArray] = useState([
     { number: 1, active: true },
     { number: 2, active: true },
@@ -50,10 +52,12 @@ function Yahtze() {
   const [gameTry, setgameTry] = useState("you");
 
   const diceDisableHandler = (ind) => {
-    const updatedDiceArray = [...diceArray];
-    if (ind >= 0 && ind < updatedDiceArray.length) {
-      updatedDiceArray[ind].active = !updatedDiceArray[ind].active;
-      setdiceArray(updatedDiceArray);
+    if (gameDefault) {
+      const updatedDiceArray = [...diceArray];
+      if (ind >= 0 && ind < updatedDiceArray.length) {
+        updatedDiceArray[ind].active = !updatedDiceArray[ind].active;
+        setdiceArray(updatedDiceArray);
+      }
     }
   };
 
@@ -326,6 +330,7 @@ function Yahtze() {
     }
   };
   const rolHandler = () => {
+    setgameDefault(true);
     setscoreTable((prevState) => {
       return {
         ...prevState,
@@ -362,65 +367,106 @@ function Yahtze() {
   };
 
   const chooseHandler = (type, data) => {
-    const updatedDiceArray = diceArray.map((die) => ({ ...die, active: true }));
-    setdiceArray(updatedDiceArray);
-    setgameTry((prevTry) => (prevTry === "you" ? "enemy" : "you"));
-    setenemyRollCounter(3);
-    setyouRollCounter(3);
-    if (type === "you") {
-      setscoreTable((prevState) => {
-        return {
-          ...prevState,
-          Your: prevState.Your.map((item) => {
-            if (item.item === data) {
-              return { ...item, completed: true };
-            } else {
-              if (item.completed === false) {
-                return { ...item, quantity: "" };
+    if (gameDefault) {
+      const updatedDiceArray = diceArray.map((die) => ({
+        ...die,
+        active: true,
+      }));
+      setdiceArray(updatedDiceArray);
+      setgameTry((prevTry) => (prevTry === "you" ? "enemy" : "you"));
+      setenemyRollCounter(3);
+      setyouRollCounter(3);
+      if (type === "you") {
+        setscoreTable((prevState) => {
+          return {
+            ...prevState,
+            Your: prevState.Your.map((item) => {
+              if (item.item === data) {
+                return { ...item, completed: true };
+              } else {
+                if (item.completed === false) {
+                  return { ...item, quantity: "" };
+                }
               }
-            }
-            return item;
-          }),
-        };
-      });
-    }
+              return item;
+            }),
+          };
+        });
+      }
 
-    if (type === "enemy") {
-      const completedTrueCount = scoreTable.Enemy.reduce((count, item) => {
-        return count + (item.completed ? 1 : 0);
-      }, 0);
+      if (type === "enemy") {
+        const completedTrueCount = scoreTable.Enemy.reduce((count, item) => {
+          return count + (item.completed ? 1 : 0);
+        }, 0);
 
-      const allCompletedExceptOne =
-        completedTrueCount === scoreTable.Enemy.length - 1 &&
-        scoreTable.Enemy.some((item) => !item.completed);
+        const allCompletedExceptOne =
+          completedTrueCount === scoreTable.Enemy.length - 1 &&
+          scoreTable.Enemy.some((item) => !item.completed);
 
-      setscoreTable((prevState) => {
-        return {
-          ...prevState,
-          Enemy: prevState.Enemy.map((item) => {
-            if (item.item === data) {
-              return { ...item, completed: true };
-            } else {
-              if (item.completed === false) {
-                return { ...item, quantity: "" };
+        setscoreTable((prevState) => {
+          return {
+            ...prevState,
+            Enemy: prevState.Enemy.map((item) => {
+              if (item.item === data) {
+                return { ...item, completed: true };
+              } else {
+                if (item.completed === false) {
+                  return { ...item, quantity: "" };
+                }
               }
-            }
-            return item;
-          }),
-        };
-      });
-      // game finished
-      setTimeout(function () {
-        if (allCompletedExceptOne) {
-          console.log(
-            "All completed are true, except one, in the Enemy array."
-          );
-        }
-      }, 1000);
+              return item;
+            }),
+          };
+        });
+        // game finished
+        setTimeout(function () {
+          if (allCompletedExceptOne) {
+            const calculateSum = (player) => {
+              return scoreTable[player].reduce((sum, item) => {
+                if (item.quantity !== "") {
+                  sum += parseInt(item.quantity);
+                }
+                return sum;
+              }, 0);
+            };
+            // Calculate sum for Your and Enemy separately
+            const sumYour = calculateSum("Your");
+            const sumEnemy = calculateSum("Enemy");
+            setFinalScore({ you: sumYour, enemy: sumEnemy });
+
+            // setTimeout(() => {
+            //   resetGame();
+            // }, 1000);
+          }
+        }, 1000);
+      }
+
+      setgameDefault(false);
     }
   };
 
-  const resetGame = () => {};
+  const resetGame = () => {
+    setFinalScore({ you: 0, enemy: 0 });
+    setyouRollCounter(3);
+    setenemyRollCounter(3);
+    setgameTry("you");
+    const updatedDiceArray = diceArray.map((die) => ({ ...die, active: true }));
+    setdiceArray(updatedDiceArray);
+    const resetScoreTable = {
+      Your: scoreTable.Your.map((item) => ({
+        ...item,
+        quantity: "",
+        completed: false,
+      })),
+      Enemy: scoreTable.Enemy.map((item) => ({
+        ...item,
+        quantity: "",
+        completed: false,
+      })),
+    };
+    setscoreTable(resetScoreTable);
+    setgameDefault(false);
+  };
   return (
     <div className="yahtze_fluid">
       <div className="yahtze_container">
@@ -428,6 +474,7 @@ function Yahtze() {
           <h1>Yahtzee!</h1>
           <div className="dice-container">
             <Dice
+              gameDefault={gameDefault}
               diceArray={diceArray}
               diceDisableHandler={diceDisableHandler}
             />
@@ -449,7 +496,12 @@ function Yahtze() {
           <h2>Score Table</h2>
 
           <div className="table_container">
-            <Table chooseHandler={chooseHandler} scoreTable={scoreTable} />
+            <Table
+              gameTry={gameTry}
+              finalScore={finalScore}
+              chooseHandler={chooseHandler}
+              scoreTable={scoreTable}
+            />
           </div>
         </div>
       </div>

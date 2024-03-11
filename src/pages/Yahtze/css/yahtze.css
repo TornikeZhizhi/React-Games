@@ -85,6 +85,14 @@ td:nth-child(2) {
   font-size: 5rem;
   color: #fff;
   margin-right: 5px;
+  transition: all 0.4s;
+  width: 70px;
+  height: 80px;
+  display: inline-block;
+}
+
+.dice-container i.fa-question {
+  font-size: 4rem !important;
 }
 
 tr span {
@@ -131,6 +139,12 @@ tr span {
   font-weight: normal;
 }
 
+.you_row.disable,
+.enemy_row.disable {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
 .tbl_box.bold {
   font-weight: bold;
 }
@@ -141,6 +155,7 @@ tr span {
 
 .tbl_box.completed {
   background-color: aquamarine;
+  pointer-events: none;
 }
 
 .rotateAnime {

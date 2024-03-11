@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function Dice({ diceArray, diceDisableHandler }) {
+function Dice({ diceArray, diceDisableHandler, gameDefault }) {
   const [animeToggler, setanimeToggler] = useState(true);
 
   function numberToWord(number) {
@@ -42,7 +42,9 @@ function Dice({ diceArray, diceDisableHandler }) {
           key={index}
           className={`fas fa-dice-${numberToWord(item.number)} ${
             animeToggler ? "rotateAnime" : ""
-          } ${!item.active ? "disable" : ""}`}
+          } ${!item.active ? "disable" : ""} ${
+            gameDefault === false ? "fa-question" : ""
+          }`}
         ></i>
       ))}
     </>

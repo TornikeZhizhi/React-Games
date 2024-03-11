@@ -1,6 +1,6 @@
 import React from "react";
 
-function Table({ scoreTable, chooseHandler }) {
+function Table({ scoreTable, chooseHandler, finalScore, gameTry }) {
   const onChooseHandler = (type, data) => {
     chooseHandler(type, data);
   };
@@ -22,7 +22,7 @@ function Table({ scoreTable, chooseHandler }) {
           })}
         </div>
 
-        <div className="you_row">
+        <div className={`you_row ${gameTry === "enemy" ? "disable" : ""}`}>
           {scoreTable.Your.map((item, index) => {
             return (
               <div
@@ -38,7 +38,7 @@ function Table({ scoreTable, chooseHandler }) {
           })}
         </div>
 
-        <div className="enemy_row">
+        <div className={`enemy_row ${gameTry === "you" ? "disable" : ""}`}>
           {scoreTable.Enemy.map((item, index) => {
             return (
               <div
@@ -59,8 +59,8 @@ function Table({ scoreTable, chooseHandler }) {
       </div>
       <div className="table_common_box">
         <div className="tbl_box bold purple tbl_titles">TOTAL SCORE</div>
-        <div className="tbl_box bold purple"></div>
-        <div className="tbl_box bold purple"></div>
+        <div className="tbl_box bold purple">{finalScore.you}</div>
+        <div className="tbl_box bold purple">{finalScore.enemy}</div>
       </div>
     </>
   );
