@@ -482,7 +482,7 @@ function Yahtze() {
           {modalToggler && (
             <FinalModal resetGame={resetGame} finalScore={finalScore} />
           )}
-          {/* <h1>Yahtzee!</h1> */}
+          <h1>Yahtzee!</h1>
           <div className="dice-container">
             <Dice
               gameDefault={gameDefault}
