@@ -37,8 +37,12 @@
   transition: all 0.4s;
 }
 
+.sidebar button:active {
+  transform: translateY(5px);
+}
 .sidebar button.disabled {
   background-color: gray;
+  transform: translateY(0px) !important;
 }
 
 .sidebar h1 {
@@ -89,7 +93,7 @@ td:nth-child(2) {
   font-size: 5rem;
   color: #fff;
   margin-right: 5px;
-  /* transition: all 0.4s; */
+  transition: all 0.3s;
   width: 70px;
   height: 80px;
   display: flex;
@@ -188,6 +192,7 @@ tr span {
 .fas.disable {
   animation: unset;
   color: mediumspringgreen;
+  transform: translateY(10px);
 }
 
 .table_common_box:nth-child(7) {
