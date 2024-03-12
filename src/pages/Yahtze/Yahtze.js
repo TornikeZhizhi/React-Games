@@ -67,31 +67,18 @@ function Yahtze() {
   };
 
   const updateQuantity = (player, playerItem, value) => {
-    if (player == "you") {
-      setscoreTable((prevState) => {
-        return {
-          ...prevState,
-          Your: prevState.Your.map((item) => {
-            if (item.item === playerItem && item.completed === false) {
-              return { ...item, quantity: value };
-            }
-            return item;
-          }),
-        };
-      });
-    } else {
-      setscoreTable((prevState) => {
-        return {
-          ...prevState,
-          Enemy: prevState.Enemy.map((item) => {
-            if (item.item === playerItem && item.completed === false) {
-              return { ...item, quantity: value };
-            }
-            return item;
-          }),
-        };
-      });
-    }
+    const targetKey = player === "you" ? "Your" : "Enemy";
+    setscoreTable((prevState) => {
+      return {
+        ...prevState,
+        [targetKey]: prevState[targetKey].map((item) => {
+          if (item.item === playerItem && item.completed === false) {
+            return { ...item, quantity: value };
+          }
+          return item;
+        }),
+      };
+    });
   };
 
   const tableChecker = (diceRandomArray) => {
@@ -346,11 +333,6 @@ function Yahtze() {
           }
           return item;
         }),
-      };
-    });
-    setscoreTable((prevState) => {
-      return {
-        ...prevState,
         Enemy: prevState.Enemy.map((item) => {
           if (item.completed === false) {
             return { ...item, quantity: "" };
@@ -383,71 +365,47 @@ function Yahtze() {
       setgameTry((prevTry) => (prevTry === "you" ? "enemy" : "you"));
       setenemyRollCounter(3);
       setyouRollCounter(3);
-      if (type === "you") {
-        setscoreTable((prevState) => {
-          return {
-            ...prevState,
-            Your: prevState.Your.map((item) => {
-              if (item.item === data) {
-                return { ...item, completed: true };
-              } else {
-                if (item.completed === false) {
-                  return { ...item, quantity: "" };
-                }
-              }
-              return item;
-            }),
-          };
+      const updateScoreTable = (player) => {
+        const updatedItems = scoreTable[player].map((item) => {
+          if (item.item === data) {
+            return { ...item, completed: true };
+          } else if (!item.completed) {
+            return { ...item, quantity: "" };
+          }
+          return item;
         });
-      }
+        setscoreTable((prevState) => ({
+          ...prevState,
+          [player]: updatedItems,
+        }));
+      };
 
-      if (type === "enemy") {
-        const completedTrueCount = scoreTable.Enemy.reduce((count, item) => {
-          return count + (item.completed ? 1 : 0);
-        }, 0);
-
+      if (type === "you") {
+        updateScoreTable("Your");
+      } else if (type === "enemy") {
+        const completedTrueCount = scoreTable.Enemy.reduce(
+          (count, item) => count + item.completed,
+          0
+        );
         const allCompletedExceptOne =
           completedTrueCount === scoreTable.Enemy.length - 1 &&
           scoreTable.Enemy.some((item) => !item.completed);
-
-        setscoreTable((prevState) => {
-          return {
-            ...prevState,
-            Enemy: prevState.Enemy.map((item) => {
-              if (item.item === data) {
-                return { ...item, completed: true };
-              } else {
-                if (item.completed === false) {
-                  return { ...item, quantity: "" };
-                }
-              }
-              return item;
-            }),
-          };
-        });
-        // game finished
-        setTimeout(function () {
+        updateScoreTable("Enemy");
+        setTimeout(() => {
           if (allCompletedExceptOne) {
-            const calculateSum = (player) => {
-              return scoreTable[player].reduce((sum, item) => {
-                if (item.quantity !== "") {
-                  sum += parseInt(item.quantity);
-                }
-                return sum;
-              }, 0);
-            };
-            // Calculate sum for Your and Enemy separately
+            const calculateSum = (player) =>
+              scoreTable[player].reduce(
+                (sum, item) =>
+                  item.quantity !== "" ? sum + parseInt(item.quantity) : sum,
+                0
+              );
             const sumYour = calculateSum("Your");
             const sumEnemy = calculateSum("Enemy");
             setFinalScore({ you: sumYour, enemy: sumEnemy });
-
-            setTimeout(() => {
-              setmodalToggler(true);
-            }, 2000);
+            setTimeout(() => setmodalToggler(true), 2000);
           }
         }, 1000);
       }
-
       setgameDefault(false);
     }
   };
