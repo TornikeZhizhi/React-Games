@@ -9,6 +9,7 @@ import FlipGame from "./pages/FlipGame/FlipGame";
 import Quiz from "./pages/Quizz/Quiz";
 import QuinInner from "./pages/Quizz/QuizInner";
 import Yahtze from "./pages/Yahtze/Yahtze";
+import NewWheel from "./pages/newWheel/newWheel";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: "/slot", element: <Slot /> },
       { path: "/wheel", element: <Wheel /> },
       { path: "/flip-game", element: <FlipGame /> },
+      { path: "/newWheel", element: <NewWheel /> },
       { path: "/yahtze", element: <Yahtze /> },
       { path: "/quiz", element: <Quiz /> },
       { path: "/quiz/:id", element: <QuinInner /> },

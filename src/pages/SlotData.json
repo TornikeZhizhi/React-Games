@@ -27,7 +27,5 @@
   { "name": "slot_a", "animation": false },
   { "name": "slot_anubisi", "animation": false },
   { "name": "slot_a", "animation": false },
-  { "name": "slot_10", "animation": false },
-
-  { "name": "slot_dsda", "animation": false }
+  { "name": "slot_anubisi", "animation": false }
 ]

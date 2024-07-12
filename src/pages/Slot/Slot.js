@@ -51,7 +51,7 @@ function Slot() {
   }, []);
 
   const createAnimeRow = (startIndex) => {
-    return Array.from({ length: 30 }, (_, i) => {
+    return Array.from({ length: 29 }, (_, i) => {
       const randomNumb =
         i >= 24
           ? SlotData[i + startIndex - 24].name
