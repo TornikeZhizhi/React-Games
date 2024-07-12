@@ -20,7 +20,7 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/wheel">
+              <Link to="/newWheel">
                 {" "}
                 <img src={WheelImg} />
                 Wheel
