@@ -6,6 +6,8 @@ import WheelImg from "./imgs/fortune-wheel.png";
 import FlipImg from "./imgs/card-game.png";
 import QuizGame from "./imgs/answer.png";
 import DiceGame from "./imgs/dice.png";
+import HangManGame from "./imgs/hangman.png";
+import TypeGame from "./imgs/type.png";
 
 function Header() {
   return (
@@ -45,6 +47,20 @@ function Header() {
                 {" "}
                 <img src={DiceGame} />
                 Yahtzee
+              </Link>
+            </li>
+            <li>
+              <Link to="/hangman">
+                {" "}
+                <img src={HangManGame} />
+                Hang-Man
+              </Link>
+            </li>
+            <li>
+              <Link to="/typegame">
+                {" "}
+                <img src={TypeGame} />
+                Type-Game
               </Link>
             </li>
           </ul>

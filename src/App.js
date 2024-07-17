@@ -10,6 +10,8 @@ import Quiz from "./pages/Quizz/Quiz";
 import QuinInner from "./pages/Quizz/QuizInner";
 import Yahtze from "./pages/Yahtze/Yahtze";
 import NewWheel from "./pages/newWheel/newWheel";
+import HangManMain from "./pages/HangMan/HangManMain";
+import TypeGame from "./pages/TypeGame/TypeGame";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,8 @@ const router = createBrowserRouter([
       { path: "/flip-game", element: <FlipGame /> },
       { path: "/newWheel", element: <NewWheel /> },
       { path: "/yahtze", element: <Yahtze /> },
+      { path: "/hangman", element: <HangManMain /> },
+      { path: "/typegame", element: <TypeGame /> },
       { path: "/quiz", element: <Quiz /> },
       { path: "/quiz/:id", element: <QuinInner /> },
     ],
