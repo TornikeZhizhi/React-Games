@@ -14,7 +14,7 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <Link to="/slot">
+              <Link to="/">
                 <img src={SlotImg} />
                 Slot
               </Link>

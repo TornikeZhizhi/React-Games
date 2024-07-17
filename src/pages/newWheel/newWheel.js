@@ -3,14 +3,14 @@ import "./newWheel.css";
 
 function NewWheel() {
   const [wheelData, setWheelData] = useState([
-    { point: 50 },
-    { point: 100 },
-    { point: 200 },
-    { point: 300 },
-    { point: 400 },
-    { point: 500 },
-    { point: 600 },
-    { point: 700 },
+    { point: 50, id: 1, activeClass: false },
+    { point: 100, id: 2, activeClass: false },
+    { point: 200, id: 3, activeClass: false },
+    { point: 300, id: 4, activeClass: false },
+    { point: 400, id: 5, activeClass: false },
+    { point: 500, id: 6, activeClass: false },
+    { point: 600, id: 7, activeClass: false },
+    { point: 700, id: 8, activeClass: false },
   ]);
   const [wheelWidth, setWheelWidth] = useState();
   const [winningNumber, setwinningNumber] = useState(1);
@@ -29,9 +29,31 @@ function NewWheel() {
 
     setWheelData(updatedWheelData);
   }, []);
+  const addActiveClass = () => {
+    const updateArray = wheelData.map((item) => {
+      if (item.id === winningNumber) {
+        return { ...item, activeClass: true };
+      } else {
+        return item;
+      }
+    });
+    setWheelData(updateArray);
+  };
+
+  const removeActiveClass = () => {
+    const updateArray2 = wheelData.map((item) => {
+      return { ...item, activeClass: false };
+    });
+    setWheelData(updateArray2);
+  };
 
   const handleTransitionEnd = () => {
+    addActiveClass();
+    setTimeout(() => {
+      removeActiveClass();
+    }, 3000);
     setspintValue((prev) => prev + 1080);
+    // setwinningNumber(winningNumber + 1);
   };
 
   const wheelAnimeHandler = () => {
@@ -62,7 +84,9 @@ function NewWheel() {
               return (
                 <div
                   key={index}
-                  className="wheelinator__section"
+                  className={`wheelinator__section ${
+                    item.activeClass ? "active" : null
+                  }`}
                   style={{
                     transform: `rotate(${item.wheelTransform}deg)`,
                     width: `${wheelWidth}%`,

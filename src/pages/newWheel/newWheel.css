@@ -852,3 +852,7 @@ span[data-wonAmount]:after {
     transform: rotate(360deg);
   }
 }
+
+.wheelinator__section.active .wheelinator__section-half {
+  background-color: orangered;
+}
