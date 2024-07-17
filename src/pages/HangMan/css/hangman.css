@@ -1,5 +1,6 @@
 .Hangman {
   width: 400px;
+  max-width: 100%;
   color: black;
   text-align: center;
   zoom: 1.3;
@@ -13,6 +14,7 @@
   background-size: contain;
   background-image: url("../imgs/paper.jpg");
   height: calc(100vh - 80px);
+  padding: 0 10px;
 }
 
 .Hangman img {
