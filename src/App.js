@@ -12,7 +12,7 @@ import Yahtze from "./pages/Yahtze/Yahtze";
 import NewWheel from "./pages/newWheel/newWheel";
 import HangManMain from "./pages/HangMan/HangManMain";
 import TypeGame from "./pages/TypeGame/TypeGame";
-import Breakout from "./pages/Breakout/breakout";
+import Piano from "./pages/Piano/Piano";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       { path: "/hangman", element: <HangManMain /> },
       { path: "/typegame", element: <TypeGame /> },
       { path: "/quiz", element: <Quiz /> },
-      { path: "/breakout", element: <Breakout /> },
+      { path: "/piano", element: <Piano /> },
       { path: "/quiz/:id", element: <QuinInner /> },
     ],
   },

@@ -8,6 +8,7 @@ import QuizGame from "./imgs/answer.png";
 import DiceGame from "./imgs/dice.png";
 import HangManGame from "./imgs/hangman.png";
 import TypeGame from "./imgs/type.png";
+import Piano from "./imgs/piano.png";
 
 function Header() {
   return (
@@ -61,6 +62,13 @@ function Header() {
                 {" "}
                 <img src={TypeGame} />
                 Type-Game
+              </Link>
+            </li>
+            <li>
+              <Link to="/piano">
+                {" "}
+                <img src={Piano} />
+                Piano
               </Link>
             </li>
           </ul>
