@@ -100,6 +100,7 @@ function Piano() {
 
   return (
     <div id="p-wrapper">
+      <div className="piano_header"></div>
       <ul id="piano">
         <li className="kb_parent" id="key-A">
           <span className="keyboard_letter">A</span>

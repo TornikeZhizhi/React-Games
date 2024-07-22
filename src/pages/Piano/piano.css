@@ -104,18 +104,16 @@ ul#piano li div.anchor:active:after {
 }
 /* // */
 
-ul#piano li a:active,
-ul#piano li .keyboard_letter:active {
+ul#piano li > .keyboard_letter:active {
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
-  /* position: relative; */
+
   top: 2px;
   height: 216px;
 }
 
-ul#piano li a:active:before,
-ul#piano li .keyboard_letter:active:before {
+ul#piano li > .keyboard_letter:active:before {
   content: "";
   width: 0px;
   height: 0px;
@@ -128,7 +126,7 @@ ul#piano li .keyboard_letter:active:before {
 }
 
 ul#piano li a:active:after,
-ul#piano li .keyboard_letter:active:after {
+ul#piano li > .keyboard_letter:active:after {
   content: "";
   width: 0px;
   height: 0px;
@@ -649,7 +647,10 @@ ul#piano li li a:hover {
     opacity: 1;
   }
 }
-
+.piano_header {
+  height: 100px;
+  width: 100%;
+}
 .piano_fluid {
   padding: 0 10px;
 }
