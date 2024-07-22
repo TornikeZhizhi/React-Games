@@ -102,7 +102,45 @@ ul#piano li div.anchor:active:after {
   right: 0px;
   top: 0px;
 }
+/* // */
 
+ul#piano li a:active,
+ul#piano li .keyboard_letter:active {
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  /* position: relative; */
+  top: 2px;
+  height: 216px;
+}
+
+ul#piano li a:active:before,
+ul#piano li .keyboard_letter:active:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-width: 216px 5px 0px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+ul#piano li a:active:after,
+ul#piano li .keyboard_letter:active:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-width: 216px 5px 0px;
+  border-style: solid;
+  border-color: transparent rgba(0, 0, 0, 0.1) transparent transparent;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+/* // */
 #piano li.active .anchor {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
   /* position: relative; */
@@ -134,11 +172,17 @@ ul#piano li div.anchor:active:after {
 
 .keyboard_letter {
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   font-family: "Akshar", sans-serif;
   color: #000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10px;
 }
 /* Black Tuts */
 ul#piano li .piano_key {
