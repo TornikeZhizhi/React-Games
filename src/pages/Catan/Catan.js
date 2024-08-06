@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./css/Catan.css";
 import tree from "./img/tree.png";
 import brick from "./img/brick.png";
@@ -8,7 +8,7 @@ import sheep from "./img/sheep.png";
 import rock from "./img/rock.png";
 
 function Catan() {
-  let catanArray = [
+  const [catanArray, setCatanArray] = useState([
     { name: rock },
     { name: hay },
     { name: tree },
@@ -28,8 +28,20 @@ function Catan() {
     { name: brick },
     { name: sheep },
     { name: brick },
-  ];
-  useEffect(() => {}, []);
+  ]);
+
+  useEffect(() => {
+    const shuffleArray = (array) => {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    };
+
+    const shuffledArray = [...catanArray];
+    shuffleArray(shuffledArray);
+    setCatanArray(shuffledArray);
+  }, []);
 
   return (
     <div className="ct_fluid">
