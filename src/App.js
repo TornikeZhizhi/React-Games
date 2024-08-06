@@ -13,6 +13,7 @@ import NewWheel from "./pages/newWheel/newWheel";
 import HangManMain from "./pages/HangMan/HangManMain";
 import TypeGame from "./pages/TypeGame/TypeGame";
 import Piano from "./pages/Piano/Piano";
+import Catan from "./pages/Catan/Catan";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       { path: "/typegame", element: <TypeGame /> },
       { path: "/quiz", element: <Quiz /> },
       { path: "/piano", element: <Piano /> },
+      { path: "/catan", element: <Catan /> },
       { path: "/quiz/:id", element: <QuinInner /> },
     ],
   },
