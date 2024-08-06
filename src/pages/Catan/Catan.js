@@ -32,15 +32,23 @@ function Catan() {
   useEffect(() => {}, []);
 
   return (
-    <div className="ct_container">
-      <div className="ct_inner_container">
-        {catanArray.map((item, index) => {
-          return (
-            <div className="ct_block">
-              <img src={item.name} />
-            </div>
-          );
-        })}
+    <div className="ct_fluid">
+      <div className="ct_container">
+        <div class="cat_coastline cat_coastline_1p cat_coastline_n1"></div>
+        <div class="cat_coastline cat_coastline_2p cat_coastline_n2"></div>
+        <div class="cat_coastline cat_coastline_1p cat_coastline_n3"></div>
+        <div class="cat_coastline cat_coastline_2p cat_coastline_n4"></div>
+        <div class="cat_coastline cat_coastline_1p cat_coastline_n5"></div>
+        <div class="cat_coastline cat_coastline_2p cat_coastline_n6"></div>
+        <div className="ct_inner_container">
+          {catanArray.map((item, index) => {
+            return (
+              <div className="ct_block">
+                <img src={item.name} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
