@@ -1,6 +1,6 @@
 .ct_container {
   display: block;
-  max-width: 1000px;
+  max-width: 515px;
   margin: 0 auto;
   position: relative;
 }
@@ -8,7 +8,7 @@
 .ct_container:after {
   content: "";
   position: absolute;
-  top: 60%;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: radial-gradient(
@@ -18,7 +18,7 @@
     transparent 57%,
     transparent 100%
   );
-  width: 65%;
+  width: 150%;
   height: 100%;
 }
 
@@ -45,32 +45,32 @@
   background-position: 0 0;
 }
 .cat_coastline_n1 {
-  bottom: -58px;
-  left: 380px;
+  bottom: -63px;
+  left: 138px;
 }
 .cat_coastline_n2 {
-  bottom: 96px;
-  right: 123px;
+  bottom: 95px;
+  right: -121px;
   transform: rotate(-60deg);
 }
 .cat_coastline_n3 {
-  top: 84px;
-  right: 162px;
+  top: 82px;
+  right: -77px;
   transform: rotate(-120deg);
 }
 .cat_coastline_n4 {
-  left: 297px;
-  top: 3px;
+  left: 50px;
+  top: -4px;
   transform: rotate(-180deg);
 }
 .cat_coastline_n5 {
-  left: 112px;
-  top: 161px;
+  left: -137px;
+  top: 153px;
   transform: rotate(120deg);
 }
 .cat_coastline_n6 {
   bottom: 23px;
-  left: 150px;
+  left: -93px;
   transform: rotate(60deg);
 }
 .ct_block {
@@ -88,7 +88,7 @@
 
 .ct_inner_container {
   display: flex;
-  max-width: 510px;
+  max-width: 100%;
   margin: 0 auto;
   justify-content: center;
   height: calc(100vh - 180px);
@@ -170,4 +170,80 @@
 .ct_block:nth-child(19) {
   top: 404px;
   left: 300px;
+}
+
+.ct_ship {
+  width: 49px;
+  height: 49px;
+  position: absolute;
+  background: url(../img/harbors.webp);
+  z-index: 30;
+}
+
+.ship_tree {
+  background-size: 700% 100%;
+  background-position: -499%;
+}
+.ship_rock {
+  background-position: -400%;
+  background-size: 700% 100%;
+  width: 41px;
+  height: 41px;
+}
+.ship_sheep {
+  background-position: 0;
+  background-size: 700% 100%;
+}
+.ship_tree {
+  background-position: -300%;
+  background-size: 700% 100%;
+}
+
+.ship_three {
+  background-position: -499%;
+  background-size: 700% 100%;
+}
+.ship_brick {
+  background-position: -200%;
+  background-size: 700% 100%;
+}
+.ship_hay {
+  background-position: -100%;
+  background-size: 700% 100%;
+}
+.ct_ship:nth-child(1) {
+  top: 8px;
+  left: 85px;
+}
+.ct_ship:nth-child(2) {
+  top: 4px;
+  left: 257px;
+}
+.ct_ship:nth-child(3) {
+  top: 97px;
+  left: 420px;
+}
+.ct_ship:nth-child(4) {
+  top: 353px;
+  left: -16px;
+}
+.ct_ship:nth-child(5) {
+  top: 504px;
+  left: 68px;
+}
+.ct_ship:nth-child(6) {
+  top: 512px;
+  left: 262px;
+}
+.ct_ship:nth-child(7) {
+  top: 156px;
+  left: -15px;
+}
+.ct_ship:nth-child(8) {
+  top: 267px;
+  right: -49px;
+}
+.ct_ship:nth-child(9) {
+  top: 421px;
+  right: 34px;
 }

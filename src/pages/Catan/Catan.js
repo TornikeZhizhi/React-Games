@@ -46,12 +46,25 @@ function Catan() {
   return (
     <div className="ct_fluid">
       <div className="ct_container">
-        <div class="cat_coastline cat_coastline_1p cat_coastline_n1"></div>
-        <div class="cat_coastline cat_coastline_2p cat_coastline_n2"></div>
-        <div class="cat_coastline cat_coastline_1p cat_coastline_n3"></div>
-        <div class="cat_coastline cat_coastline_2p cat_coastline_n4"></div>
-        <div class="cat_coastline cat_coastline_1p cat_coastline_n5"></div>
-        <div class="cat_coastline cat_coastline_2p cat_coastline_n6"></div>
+        <div className="coasts_box">
+          <div class="cat_coastline cat_coastline_1p cat_coastline_n1"></div>
+          <div class="cat_coastline cat_coastline_2p cat_coastline_n2"></div>
+          <div class="cat_coastline cat_coastline_1p cat_coastline_n3"></div>
+          <div class="cat_coastline cat_coastline_2p cat_coastline_n4"></div>
+          <div class="cat_coastline cat_coastline_1p cat_coastline_n5"></div>
+          <div class="cat_coastline cat_coastline_2p cat_coastline_n6"></div>
+        </div>
+        <div class="ship_container">
+          <div className="ct_ship ship_tree"></div>
+          <div className="ct_ship ship_rock"></div>
+          <div className="ct_ship ship_sheep"></div>
+          <div className="ct_ship ship_tree"></div>
+          <div className="ct_ship ship_three ship_three1"></div>
+          <div className="ct_ship ship_three ship_three2"></div>
+          <div className="ct_ship ship_three ship_three3"></div>
+          <div className="ct_ship ship_brick"></div>
+          <div className="ct_ship ship_hay"></div>
+        </div>
         <div className="ct_inner_container">
           {catanArray.map((item, index) => {
             return (
